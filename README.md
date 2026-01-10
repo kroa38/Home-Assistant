@@ -87,7 +87,7 @@ Then add also the key inside the add-ons configuration.
 
 # Link and notes
 
-Cool link for yaml essential:  https://yamline.com/tutorial/
-a good home-assistant config : https://github.com/basnijholt/home-assistant-config/tree/master
+Cool link for yaml essential:  https://yamline.com/tutorial/  
+A good home-assistant config : https://github.com/basnijholt/home-assistant-config/tree/master  
 
 
