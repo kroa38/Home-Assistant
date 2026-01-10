@@ -65,11 +65,11 @@ Tuya or Aubess 2 Gangs switch modified with 2 diodes
 
 ## Add-ons used
 
-<img src="images/add-ons.png" width=80%>
+<img src="images/add-ons.png" width=100%>
 
 ## Integrations used
 
-<img src="images/integrations.png" width=80%>
+<img src="images/integrations.png" width=100%>
 
 
 # Advance SSH & Web terminal
