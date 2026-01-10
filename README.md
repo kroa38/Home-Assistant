@@ -7,13 +7,13 @@ Hardware:
  - TI Zigbee Dongle (CC2652P)
  - 5A Power Supply   
 
-<img src="images/hardware.png" width=30%>
+<img src="images/hardware.png" width=60%>
 <br>
 <br>
 <br>
 
 Zigbee Devices  
-<img src="images/zigbee_devices.png" width=30%>
+<img src="images/zigbee_devices.png" width=60%>
 
 <br>
 <br>
@@ -22,13 +22,13 @@ Zigbee Devices
 
 Principes  
 
-<img src="images/fil_pilote.png" width=30%>
+<img src="images/fil_pilote.png" width=60%>
 <br>
 <br>
 
 Tuya or Aubess 2 Gangs switch modified with 2 diodes  
 
-<img src="images/Diodes_FP.png" width=30%>
+<img src="images/Diodes_FP.png" width=60%>
 
 <br>
 <br>
@@ -37,28 +37,28 @@ Tuya or Aubess 2 Gangs switch modified with 2 diodes
 # Cards  
 
 ### Home Page  
-<img src="images/temp_hum.png" width=30%>  
+<img src="images/temp_hum.png" width=60%>  
 
 ### Mountains Wheater 
-<img src="images/montagne.png" width=30%>  
+<img src="images/montagne.png" width=60%>  
 
 ### Electric Heaters  
-<img src="images/heaters.png" width=30%>
+<img src="images/heaters.png" width=60%>
 
 ### Lights  
-<img src="images/lights.png" width=30%>
+<img src="images/lights.png" width=60%>
 
 ### Power Meter From Linky
-<img src="images/linky.png" width=30%>
+<img src="images/linky.png" width=60%>
 
 ### Doors Sensors
-<img src="images/doors.png" width=30%>
+<img src="images/doors.png" width=60%>
 
 ### Batteries Levels
-<img src="images/batteries.png" width=30%>
+<img src="images/batteries.png" width=60%>
 
 ### Network Info
-<img src="images/network.png" width=30%>
+<img src="images/network.png" width=60%>
 <br>
 <br>
 <br>
