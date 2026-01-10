@@ -72,16 +72,17 @@ Tuya or Aubess 2 Gangs switch modified with 2 diodes
 <img src="images/integrations.png" width=100%>
 
 
-# Advance SSH & Web terminal
+# Shell_Command
 
-In order to have allow execution of shell_command 
+Add-ons: Advance SSH & Web terminal  
+In order to allow execution of shell_command   
 Create a directory inside /config  
 ```
 cd config 
 mkdir .ssh 
 ```
-copy inside the directory your ssh public key __ssh_host_rsa_key.pub_ located in the directory __data__  
-Add also the key also inside the add-ons configuration  
+Copy inside the directory your ssh public key.  
+Then add also the key inside the add-ons configuration.    
 
 
 # Link and notes
