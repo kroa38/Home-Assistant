@@ -1,0 +1,30 @@
+- id: '38185012'
+  alias: CEA Grenoble 213m
+  entities:
+    temperature: input_number.temp_cea_213m
+    humidity: input_number.hum_cea_213m
+- id: '38005402'
+  alias: Col de l'Aigleton 2240m
+  entities:
+    temperature: input_number.temp_aigleton_2240m
+    humidity: input_number.hum_aigleton_2240m
+- id: '38187400'
+  alias: Le Gua 1646m
+  entities:
+    temperature: input_number.temp_gua_1646m
+    humidity: input_number.hum_gua_1646m
+- id: '38567002'
+  alias: Chamrousse 1700m
+  entities:
+    temperature: input_number.temp_chamrousse_1700m
+    humidity: input_number.hum_chamrousse_1700m
+- id: '38472403'
+  alias: Col de Porte 1325m
+  entities:
+    temperature: input_number.temp_col_de_porte_1325m
+    humidity: input_number.hum_col_de_porte_1325m
+- id: '38548001'
+  alias: Villard de Lans 1027m
+  entities:
+    temperature: input_number.temp_villard_de_lans_1027m
+    humidity: input_number.hum_villard_de_lans_1027m

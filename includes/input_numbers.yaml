@@ -1,0 +1,262 @@
+#-
+#  _                   _                             _
+# (_)_ __  _ __  _   _| |_     _ __  _   _ _ __ ___ | |__   ___ _ __ ___
+# | | '_ \| '_ \| | | | __|   | '_ \| | | | '_ ` _ \| '_ \ / _ \ '__/ __|
+# | | | | | |_) | |_| | |_    | | | | |_| | | | | | | |_) |  __/ |  \__ \
+# |_|_| |_| .__/ \__,_|\__|___|_| |_|\__,_|_| |_| |_|_.__/ \___|_|  |___/
+#         |_|            |_____|
+#
+#- from github.com/basnijholt/home-assistant-config
+
+air_quality:
+  name: Seyssinet-Pariset Air Quality
+  min: 0
+  max: 7
+  step: 1
+  icon: mdi:air-filter
+  mode: box
+  
+temp_col_de_porte_1325m:
+  name: Temperature Col de Porte 1325m
+  min: -20
+  max: 50
+  step: 0.1
+  icon: mdi:thermometer
+  mode: box
+hum_col_de_porte_1325m:
+  name: Humidity Col de Porte 1325m
+  min: 0
+  max: 100
+  step: 1
+  icon: mdi:water-percent
+  mode: box
+snow_col_de_porte_1325m:
+  name: Snow Level Col de Porte 1325m
+  min: 0
+  max: 500
+  step: 1
+  icon: mdi:snowflake
+  mode: box
+wind_col_de_porte_1325m:
+  name: Wind Speed Col de Porte 1325m
+  min: 0
+  max: 150
+  step: 1
+  icon: mdi:windsock
+  mode: box
+windchill_col_de_porte_1325m:
+  name: Windchill Col de Porte 1325m
+  min: -30
+  max: 50
+  step: 0.1
+  icon: mdi:snowflake-thermometer
+  mode: box  
+windgust_col_de_porte_1325m:
+  name: Wind Gust Speed Col de Porte 1325m
+  min: 0
+  max: 150
+  step: 1
+  icon: mdi:wind-power
+  mode: box
+  
+temp_aigleton_2240m:
+  name: Temperature Col de l'Aigleton 2240m
+  min: -20
+  max: 50
+  step: 0.1
+  icon: mdi:thermometer
+  mode: box
+hum_aigleton_2240m:
+  name: Humidity Col de l'Aigleton 2240m
+  min: 0
+  max: 100
+  step: 1
+  icon: mdi:water-percent
+  mode: box
+snow_aigleton_2240m:
+  name: Snow Level Col de l'Aigleton 2240m
+  min: 0
+  max: 500
+  step: 1
+  icon: mdi:snowflake
+  mode: box
+wind_aigleton_2240m:
+  name: Wind Speed Col de l'Aigleton 2240m
+  min: 0
+  max: 150
+  step: 1
+  icon: mdi:windsock
+  mode: box
+windchill_aigleton_2240m:
+  name: Windchill Col de l'Aigleton 2240m
+  min: -30
+  max: 50
+  step: 0.1
+  icon: mdi:snowflake-thermometer
+  mode: box  
+windgust_aigleton_2240m:
+  name: Wind Gust Speed Col de l'Aigleton 2240m
+  min: 0
+  max: 150
+  step: 1
+  icon: mdi:wind-power
+  mode: box
+
+temp_gua_1646m:
+  name: Temperature Le Gua 1646m
+  min: -20
+  max: 50
+  step: 0.1
+  icon: mdi:thermometer
+  mode: box
+hum_gua_1646m:
+  name: Humidity Le Gua 1646m
+  min: 0
+  max: 100
+  step: 1
+  icon: mdi:water-percent
+  mode: box
+snow_gua_1646m:
+  name: Snow Level Le Gua 1646m
+  min: 0
+  max: 500
+  step: 1
+  icon: mdi:snowflake
+  mode: box
+wind_gua_1646m:
+  name: Wind Speed Le Gua 1646m
+  min: 0
+  max: 150
+  step: 1
+  icon: mdi:windsock
+  mode: box
+windchill_gua_1646m:
+  name: Windchill Le Gua 1646m
+  min: -30
+  max: 50
+  step: 0.1
+  icon: mdi:snowflake-thermometer
+  mode: box  
+windgust_gua_1646m:
+  name: Wind Gust Speed  Le Gua 1646m
+  min: 0
+  max: 150
+  step: 1
+  icon: mdi:wind-power
+  mode: box
+
+temp_villard_de_lans_1027m:
+  name: Temperature Villard de Lans 1027m
+  min: -20
+  max: 50
+  step: 0.1
+  icon: mdi:thermometer
+  mode: box
+hum_villard_de_lans_1027m:
+  name: Humidity Villard de Lans 1027m
+  min: 0
+  max: 100
+  step: 1
+  icon: mdi:water-percent
+  mode: box
+snow_villard_de_lans_1027m:
+  name: Snow Level Villard de Lans 1027m
+  min: 0
+  max: 500
+  step: 1
+  icon: mdi:snowflake
+  mode: box
+wind_villard_de_lans_1027m:
+  name: Wind Speed Villard de Lans 1027m
+  min: 0        
+  max: 150
+  step: 1
+  icon: mdi:windsock
+  mode: box
+
+temp_cea_213m:
+  name: Temperature CEA 213m
+  min: -20
+  max: 50
+  step: 0.1
+  icon: mdi:thermometer
+  mode: box
+hum_cea_213m:
+  name: Humidity CEA 213m
+  min: 0
+  max: 100
+  step: 1
+  icon: mdi:water-percent
+  mode: box
+snow_cea_213m:
+  name: Snow Level CEA 213m
+  min: 0
+  max: 500
+  step: 1
+  icon: mdi:snowflake
+  mode: box
+wind_cea_213m:
+  name: Wind Speed CEA 213m
+  min: 0        
+  max: 150
+  step: 1
+  icon: mdi:windsock
+  mode: box
+
+temp_chamrousse_1700m:
+  name: Temperature Chamrousse 1700m
+  min: -20
+  max: 50
+  step: 0.1
+  icon: mdi:thermometer
+  mode: box
+hum_chamrousse_1700m:
+  name: Humidity Chamrousse 1700m
+  min: 0
+  max: 100    
+  step: 1
+  icon: mdi:water-percent
+  mode: box
+snow_chamrousse_1700m:
+  name: Snow Level Chamrousse 1700m
+  min: 0
+  max: 500
+  step: 1
+  icon: mdi:snowflake
+  mode: box
+wind_chamrousse_1700m:
+  name: Wind Speed Chamrousse 1700m
+  min: 0        
+  max: 150
+  step: 1
+  icon: mdi:windsock
+  mode: box
+
+file_number_aigleton_2240m:
+  name: File Aigleton 2240m
+  min: 0
+  max: 2100000000000  
+  step: 1
+  icon: mdi:file
+  mode: box
+file_number_gua_1646m:
+  name: File Gua 1646m
+  min: 0
+  max: 2100000000000  
+  step: 1
+  icon: mdi:file
+  mode: box
+file_number_col_de_porte_1325m:
+  name: File Col de Porte 1325m
+  min: 0
+  max: 2100000000000  
+  step: 1
+  icon: mdi:file
+  mode: box
+wifi_signal:
+  name: wifi_signal
+  min: 0
+  max: 100  
+  step: 1
+  icon: mdi:wifi
+  mode: box

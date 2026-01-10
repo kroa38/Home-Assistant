@@ -1,0 +1,328 @@
+confort_chauffage_rdc:
+  sequence:
+  - variables:
+      dl: '{{ "00:00:10" }}'
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 2e753ef1b6a3e2efdd66511b20295cb2
+    entity_id: 22f37933dcd2c4b4a34f6f31f66ab63c
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 2e753ef1b6a3e2efdd66511b20295cb2
+    entity_id: 379dcc5fccd9ffe1da9c2e29d2bba3fb
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 69c63cacaef486b1e8f54379d6a76fcc
+    entity_id: 34bd52c4bfe13d1daa849a04ddaa1673
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 69c63cacaef486b1e8f54379d6a76fcc
+    entity_id: b1777c0f3b2a44485de1363ec406cd2c
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 2554d19ae5a2d8f447df695f361d99b2
+    entity_id: 53e92b1c622cf464da822950f0416a4a
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 2554d19ae5a2d8f447df695f361d99b2
+    entity_id: 63f146d3231274260dad5256131b121e
+    domain: switch
+  alias: confort_chauffage_rdc
+  description: confort_chauffage_rdc (l1 = off, l2  = off)
+confort_chauffage_1er:
+  sequence:
+  - variables:
+      dl: '{{ "00:00:10" }}'
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 2f143f961cac966979d21cb2b6804991
+    entity_id: 6becde6e3bfad992aec2fc57fb368513
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 2f143f961cac966979d21cb2b6804991
+    entity_id: 9d97514f0668559038566efe3eb06fa9
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: f11ec583b18a185af0892ed6ae134ab1
+    entity_id: 68dae1c53ae33079a21c7b3e9ef81c52
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: f11ec583b18a185af0892ed6ae134ab1
+    entity_id: ea2bd4f8f57f3fa6451e7ff91dff655d
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 7f934d4227c7ddc1b3b034825caf41fb
+    entity_id: 00f90ecef334203dde735620fec29d7f
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 7f934d4227c7ddc1b3b034825caf41fb
+    entity_id: 1b98b28cc0f037a623ec08a2ba651c36
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 9680359b9acf1c802a10f1c6e7b147b6
+    entity_id: 0929443bbd6b2cda72693eedbd337298
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 9680359b9acf1c802a10f1c6e7b147b6
+    entity_id: 44f963b96b34d6cd550695ce6f74a9e8
+    domain: switch
+  alias: confort_chauffage_1er
+  description: onfort_chauffage_1er (l1 = off, l2  = off)
+eco_chauffage_rdc:
+  sequence:
+  - variables:
+      dl: '{{ "00:00:10" }}'
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 2e753ef1b6a3e2efdd66511b20295cb2
+    entity_id: 22f37933dcd2c4b4a34f6f31f66ab63c
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 2e753ef1b6a3e2efdd66511b20295cb2
+    entity_id: 379dcc5fccd9ffe1da9c2e29d2bba3fb
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 69c63cacaef486b1e8f54379d6a76fcc
+    entity_id: 34bd52c4bfe13d1daa849a04ddaa1673
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 69c63cacaef486b1e8f54379d6a76fcc
+    entity_id: b1777c0f3b2a44485de1363ec406cd2c
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 2554d19ae5a2d8f447df695f361d99b2
+    entity_id: 53e92b1c622cf464da822950f0416a4a
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 2554d19ae5a2d8f447df695f361d99b2
+    entity_id: 63f146d3231274260dad5256131b121e
+    domain: switch
+  alias: eco_chauffage_rdc
+  description: eco_chauffage_rdc (l1 = on, l2  = on)
+eco_chauffage_1er:
+  sequence:
+  - variables:
+      dl: '{{ "00:00:10" }}'
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 2f143f961cac966979d21cb2b6804991
+    entity_id: 6becde6e3bfad992aec2fc57fb368513
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 2f143f961cac966979d21cb2b6804991
+    entity_id: 9d97514f0668559038566efe3eb06fa9
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: f11ec583b18a185af0892ed6ae134ab1
+    entity_id: 68dae1c53ae33079a21c7b3e9ef81c52
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: f11ec583b18a185af0892ed6ae134ab1
+    entity_id: ea2bd4f8f57f3fa6451e7ff91dff655d
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 7f934d4227c7ddc1b3b034825caf41fb
+    entity_id: 00f90ecef334203dde735620fec29d7f
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 7f934d4227c7ddc1b3b034825caf41fb
+    entity_id: 1b98b28cc0f037a623ec08a2ba651c36
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 9680359b9acf1c802a10f1c6e7b147b6
+    entity_id: 0929443bbd6b2cda72693eedbd337298
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 9680359b9acf1c802a10f1c6e7b147b6
+    entity_id: 44f963b96b34d6cd550695ce6f74a9e8
+    domain: switch
+  alias: eco_chauffage_1er
+  description: eco_chauffage_1er (l1 = on, l2  = on)
+hg_chauffage_rdc:
+  sequence:
+  - variables:
+      dl: '{{ "00:00:10" }}'
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 2e753ef1b6a3e2efdd66511b20295cb2
+    entity_id: 22f37933dcd2c4b4a34f6f31f66ab63c
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 2e753ef1b6a3e2efdd66511b20295cb2
+    entity_id: 379dcc5fccd9ffe1da9c2e29d2bba3fb
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 69c63cacaef486b1e8f54379d6a76fcc
+    entity_id: 34bd52c4bfe13d1daa849a04ddaa1673
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 69c63cacaef486b1e8f54379d6a76fcc
+    entity_id: b1777c0f3b2a44485de1363ec406cd2c
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 2554d19ae5a2d8f447df695f361d99b2
+    entity_id: 53e92b1c622cf464da822950f0416a4a
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 2554d19ae5a2d8f447df695f361d99b2
+    entity_id: 63f146d3231274260dad5256131b121e
+    domain: switch
+  alias: hg_chauffage_rdc
+  description: hg_chauffage_rdc (l1 = off, l2  = on)
+hg_chauffage_1er:
+  sequence:
+  - variables:
+      dl: '{{ "00:00:10" }}'
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 2f143f961cac966979d21cb2b6804991
+    entity_id: 6becde6e3bfad992aec2fc57fb368513
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 2f143f961cac966979d21cb2b6804991
+    entity_id: 9d97514f0668559038566efe3eb06fa9
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: f11ec583b18a185af0892ed6ae134ab1
+    entity_id: 68dae1c53ae33079a21c7b3e9ef81c52
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: f11ec583b18a185af0892ed6ae134ab1
+    entity_id: ea2bd4f8f57f3fa6451e7ff91dff655d
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 7f934d4227c7ddc1b3b034825caf41fb
+    entity_id: 00f90ecef334203dde735620fec29d7f
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 7f934d4227c7ddc1b3b034825caf41fb
+    entity_id: 1b98b28cc0f037a623ec08a2ba651c36
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 9680359b9acf1c802a10f1c6e7b147b6
+    entity_id: 0929443bbd6b2cda72693eedbd337298
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 9680359b9acf1c802a10f1c6e7b147b6
+    entity_id: 44f963b96b34d6cd550695ce6f74a9e8
+    domain: switch
+  alias: hg_chauffage_1er
+  description: hg_chauffage_1er (l1 = off, l2  = on)
+off_chauffage_rdc:
+  sequence:
+  - variables:
+      dl: '{{ "00:00:10" }}'
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 2e753ef1b6a3e2efdd66511b20295cb2
+    entity_id: 22f37933dcd2c4b4a34f6f31f66ab63c
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 2e753ef1b6a3e2efdd66511b20295cb2
+    entity_id: 379dcc5fccd9ffe1da9c2e29d2bba3fb
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 69c63cacaef486b1e8f54379d6a76fcc
+    entity_id: 34bd52c4bfe13d1daa849a04ddaa1673
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 69c63cacaef486b1e8f54379d6a76fcc
+    entity_id: b1777c0f3b2a44485de1363ec406cd2c
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 2554d19ae5a2d8f447df695f361d99b2
+    entity_id: 53e92b1c622cf464da822950f0416a4a
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 2554d19ae5a2d8f447df695f361d99b2
+    entity_id: 63f146d3231274260dad5256131b121e
+    domain: switch
+  alias: off_chauffage_rdc
+  description: off_chauffage_rdc (l1 = on, l2  = off)
+off_chauffage_1er:
+  sequence:
+  - variables:
+      dl: '{{ "00:00:10" }}'
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 2f143f961cac966979d21cb2b6804991
+    entity_id: 6becde6e3bfad992aec2fc57fb368513
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 2f143f961cac966979d21cb2b6804991
+    entity_id: 9d97514f0668559038566efe3eb06fa9
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: f11ec583b18a185af0892ed6ae134ab1
+    entity_id: 68dae1c53ae33079a21c7b3e9ef81c52
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: f11ec583b18a185af0892ed6ae134ab1
+    entity_id: ea2bd4f8f57f3fa6451e7ff91dff655d
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 7f934d4227c7ddc1b3b034825caf41fb
+    entity_id: 00f90ecef334203dde735620fec29d7f
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 7f934d4227c7ddc1b3b034825caf41fb
+    entity_id: 1b98b28cc0f037a623ec08a2ba651c36
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_on
+    device_id: 9680359b9acf1c802a10f1c6e7b147b6
+    entity_id: 0929443bbd6b2cda72693eedbd337298
+    domain: switch
+  - delay: '{{ dl }}'
+  - type: turn_off
+    device_id: 9680359b9acf1c802a10f1c6e7b147b6
+    entity_id: 44f963b96b34d6cd550695ce6f74a9e8
+    domain: switch
+  alias: off_chauffage_1er
+  description: off_chauffage_1er (l1 = on, l2  = off)

@@ -1,0 +1,47 @@
+db_url: mysql://homeassistant:franck_supersecurepassword@core-mariadb/homeassistant?charset=utf8mb4
+purge_keep_days: 365
+commit_interval: 60
+exclude:
+  domains:
+    - automation
+    - update
+    - switch
+  entities:
+    - sensor.time
+include:
+  entities:
+    - input_number.snow_aigleton_2240m
+    - input_number.temp_aigleton_2240m
+    - input_number.hum_aigleton_2240m
+    - input_number.windchill_aigleton_2240m
+    - input_number.wind_aigleton_2240m
+    - input_number.windgust_aigleton_2240m    
+    
+    - input_number.snow_col_de_porte_1325m
+    - input_number.temp_col_de_porte_1325m
+    - input_number.hum_col_de_porte_1325m
+    - input_number.wind_col_de_porte_1325m
+    - input_number.windgust_col_de_porte_1325m
+    - input_number.windchill_col_de_porte_1325m
+    
+    - input_number.snow_gua_1646m
+    - input_number.temp_gua_1646m
+    - input_number.hum_gua_1646m
+    - input_number.wind_gua_1646m
+    - input_number.windgust_gua_1646m
+    - input_number.windchill_gua_1646m
+
+    - input_number.air_quality
+    
+    - sensor.th_outside_temperature
+    - sensor.th_outside_humidity
+    - sensor.th_saloon_temperature
+    - sensor.th_saloon_humidity
+    - sensor.th_amandine_temperature
+    - sensor.th_amandine_humidity
+    
+    - sensor.linky_sinsts
+    - sensor.linky_ccasn
+    - sensor.linky_easf01
+    - sensor.linky_easf02
+    

@@ -1,0 +1,53 @@
+# Nice templates here:
+# https://github.com/search?q=topic%3Ahome-assistant-config&type=Repositories
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+http:
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+  ip_ban_enabled: true
+  login_attempts_threshold: 3
+
+# Load custom front-end color
+frontend: !include includes/frontend.yaml
+
+#input text
+input_text: !include includes/input_text.yaml
+
+# input numbers
+input_number: !include includes/input_numbers.yaml
+
+# input_booleans
+input_boolean: !include includes/input_booleans.yaml
+
+# counters
+counter: !include includes/counters.yaml
+
+# sensors
+sensor: !include includes/sensors.yaml
+
+#recorder for history
+recorder: !include includes/recorder.yaml
+
+# logging
+logger: !include includes/logger.yaml
+
+# Managed via UI
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+#python scripting
+pyscript: 
+  allow_all_imports: true
+  hass_is_global: true
+
+#shell command with terminal & ssh add-on
+shell_command: !include includes/shell_command.yaml
+
+
+system_log:
+  max_entries: 80
+  

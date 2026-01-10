@@ -1,0 +1,24 @@
+# Input Booleans file
+#https://github.com/basnijholt/home-assistant-config/blob/master/includes/input_booleans.yaml
+
+chauffage_mode_auto:
+  name: chauffage_mode_auto
+  icon: mdi:radiobox-blank
+chauffage_mode_confort:
+  name: chauffage_mode_confort
+  icon: mdi:radiobox-blank
+chauffage_mode_eco:
+  name: chauffage_mode_eco
+  icon: mdi:radiobox-blank
+chauffage_mode_hg:
+  name: chauffage_mode_hg
+  icon: mdi:radiobox-blank  
+chauffage_mode_off:
+  name: chauffage_mode_off
+  icon: mdi:radiobox-blank  
+disjoncteur_chauffage:
+  name: disjoncteur_chauffage
+  icon: mdi:radiobox-blank  
+internet_connected:
+  name: internet_connected
+  icon: mdi:network-outline

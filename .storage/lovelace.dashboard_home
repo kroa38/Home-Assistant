@@ -1,0 +1,707 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_home",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Temperature",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "clock_style": "digital",
+                  "clock_size": "medium",
+                  "show_seconds": true,
+                  "no_background": true,
+                  "type": "clock",
+                  "grid_options": {
+                    "rows": 1,
+                    "columns": "full"
+                  },
+                  "face_style": "markers"
+                },
+                {
+                  "type": "markdown",
+                  "content": "  {% if states('input_number.air_quality') | int == 1 %}\n  ## __Indice Atmo 1/6__ :<font color=#4CE3C2 > __Bon__</font>\n  {% elif states('input_number.air_quality') | int == 2 %}\n  ## __Indice Atmo 2/6__ :<font color=#4CC6A1 > __Moyen__</font>\n  {% elif states('input_number.air_quality') | int == 3 %}\n  ## __Indice Atmo 3/6__ :<font color=#F7E04B > __Dégradé__</font>\n  {% elif states('input_number.air_quality') | int == 4 %}\n  ## __Indice Atmo 4/6__ :<font color=#F95D5D > __Mauvais__</font>\n  {% elif states('input_number.air_quality') | int == 5 %}\n  ## __Indice Atmo 5/6__ :<font color=#9C0A3E > __Très mauvais__</font>\n  {% elif states('input_number.air_quality') | int == 6 %}\n  ## __Indice Atmo 6/6__ :<font color=#8B1D9B > __Extrêmement mauvais__</font> \n  {% endif %}"
+                },
+                {
+                  "type": "markdown",
+                  "content": "{% if is_state('switch.heater_kitchen_l1','off')  and is_state('switch.heater_kitchen_l2','off') and is_state('switch.heater_livingroom_l1','off')  and is_state('switch.heater_livingroom_l2','off') and is_state('switch.heater_saloon_l1','off')  and is_state('switch.heater_saloon_l2','off') and is_state('switch.heater_sdb_h_l1','off')  and is_state('switch.heater_sdb_h_l2','off') and is_state('switch.heater_yoann_l1','off')  and is_state('switch.heater_yoann_l2','off') and is_state('switch.heater_amandine_l1','off')  and is_state('switch.heater_amandine_l2','off') and is_state('switch.heater_office_l1','off')  and is_state('switch.heater_office_l2','off') %}\n## Mode :<font color=green > CONFORT </font>\n{% elif is_state('switch.heater_kitchen_l1','on')  and is_state('switch.heater_kitchen_l2','on') and is_state('switch.heater_livingroom_l1','on')  and is_state('switch.heater_livingroom_l2','on') and is_state('switch.heater_saloon_l1','on')  and is_state('switch.heater_saloon_l2','on') and is_state('switch.heater_sdb_h_l1','on')  and is_state('switch.heater_sdb_h_l2','on') and is_state('switch.heater_yoann_l1','on')  and is_state('switch.heater_yoann_l2','on') and is_state('switch.heater_amandine_l1','on')  and is_state('switch.heater_amandine_l2','on') and is_state('switch.heater_office_l1','on')  and is_state('switch.heater_office_l2','on')  %}\n## Mode :<font color=orange > ECO </font>\n{% elif is_state('switch.heater_kitchen_l1','off')  and is_state('switch.heater_kitchen_l2','on') and is_state('switch.heater_livingroom_l1','off')  and is_state('switch.heater_livingroom_l2','on') and is_state('switch.heater_saloon_l1','off')  and is_state('switch.heater_saloon_l2','on') and is_state('switch.heater_sdb_h_l1','off')  and is_state('switch.heater_sdb_h_l2','on') and is_state('switch.heater_yoann_l1','off')  and is_state('switch.heater_yoann_l2','on') and is_state('switch.heater_amandine_l1','off')  and is_state('switch.heater_amandine_l2','on') and is_state('switch.heater_office_l1','off')  and is_state('switch.heater_office_l2','on')  %}\n## Mode :<font color=cyan > HG </font>\n{% elif is_state('switch.heater_kitchen_l1','on')  and is_state('switch.heater_kitchen_l2','off') and is_state('switch.heater_livingroom_l1','on')  and is_state('switch.heater_livingroom_l2','off') and is_state('switch.heater_saloon_l1','on')  and is_state('switch.heater_saloon_l2','off') and is_state('switch.heater_sdb_h_l1','on')  and is_state('switch.heater_sdb_h_l2','off') and is_state('switch.heater_yoann_l1','on')  and is_state('switch.heater_yoann_l2','off') and is_state('switch.heater_amandine_l1','on')  and is_state('switch.heater_amandine_l2','off') and is_state('switch.heater_office_l1','on')  and is_state('switch.heater_office_l2','off')  %}\n## Mode :<font color=red > OFF </font>\n{% else %}\n## Mode :<font color=red > Unknow </font>\n{% endif %}\n\n",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  }
+                },
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.th_outside_temperature",
+                  "detail": 2,
+                  "name": "T°C  Outside"
+                },
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.th_outside_humidity",
+                  "detail": 2,
+                  "name": "Hum  Outside"
+                },
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.th_saloon_temperature",
+                  "detail": 2,
+                  "name": "T°C  Saloon"
+                },
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.th_saloon_humidity",
+                  "detail": 2,
+                  "name": "Hum Saloon"
+                },
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.th_amandine_temperature",
+                  "detail": 2,
+                  "name": "T°C  Amandine"
+                },
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.th_amandine_humidity",
+                  "detail": 2,
+                  "name": "Hum Amandine"
+                }
+              ]
+            }
+          ],
+          "header": {
+            "card": {
+              "type": "markdown",
+              "text_only": true,
+              "content": "# Temperature & Humidity"
+            }
+          },
+          "type": "sections",
+          "max_columns": 4,
+          "cards": [],
+          "icon": "mdi:thermometer"
+        },
+        {
+          "type": "sections",
+          "max_columns": 4,
+          "title": "Mto",
+          "path": "mto",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "show_name": false,
+                  "show_icon": true,
+                  "show_state": true,
+                  "type": "glance",
+                  "entities": [
+                    {
+                      "entity": "input_number.temp_aigleton_2240m"
+                    },
+                    {
+                      "entity": "input_number.hum_aigleton_2240m"
+                    },
+                    {
+                      "entity": "input_number.wind_aigleton_2240m"
+                    },
+                    {
+                      "entity": "input_number.windgust_aigleton_2240m"
+                    },
+                    {
+                      "entity": "input_number.snow_aigleton_2240m"
+                    },
+                    {
+                      "entity": "input_number.windchill_aigleton_2240m"
+                    }
+                  ],
+                  "title": "Col de l'Aigleton 2240m",
+                  "state_color": false,
+                  "grid_options": {
+                    "rows": 4,
+                    "columns": 12
+                  }
+                },
+                {
+                  "show_name": false,
+                  "show_icon": true,
+                  "show_state": true,
+                  "type": "glance",
+                  "entities": [
+                    {
+                      "entity": "input_number.temp_gua_1646m"
+                    },
+                    {
+                      "entity": "input_number.hum_gua_1646m"
+                    },
+                    {
+                      "entity": "input_number.wind_gua_1646m"
+                    },
+                    {
+                      "entity": "input_number.windgust_gua_1646m"
+                    },
+                    {
+                      "entity": "input_number.snow_gua_1646m"
+                    },
+                    {
+                      "entity": "input_number.windchill_gua_1646m"
+                    }
+                  ],
+                  "title": "Le Gua 1646m"
+                },
+                {
+                  "show_name": false,
+                  "show_icon": true,
+                  "show_state": true,
+                  "type": "glance",
+                  "entities": [
+                    {
+                      "entity": "input_number.temp_col_de_porte_1325m"
+                    },
+                    {
+                      "entity": "input_number.hum_col_de_porte_1325m"
+                    },
+                    {
+                      "entity": "input_number.wind_col_de_porte_1325m"
+                    },
+                    {
+                      "entity": "input_number.windgust_col_de_porte_1325m"
+                    },
+                    {
+                      "entity": "input_number.snow_col_de_porte_1325m"
+                    },
+                    {
+                      "entity": "input_number.windchill_col_de_porte_1325m"
+                    }
+                  ],
+                  "title": "Col de Porte 1325m"
+                },
+                {
+                  "show_name": false,
+                  "show_icon": true,
+                  "show_state": true,
+                  "type": "glance",
+                  "entities": [
+                    {
+                      "entity": "input_number.temp_villard_de_lans_1027m"
+                    },
+                    {
+                      "entity": "input_number.hum_villard_de_lans_1027m"
+                    }
+                  ],
+                  "title": "Villard de Lans 1027m"
+                },
+                {
+                  "show_name": false,
+                  "show_icon": true,
+                  "show_state": true,
+                  "type": "glance",
+                  "entities": [
+                    {
+                      "entity": "input_number.temp_chamrousse_1700m"
+                    },
+                    {
+                      "entity": "input_number.hum_chamrousse_1700m"
+                    }
+                  ],
+                  "title": "Chamrousse 1700m"
+                },
+                {
+                  "show_name": false,
+                  "show_icon": true,
+                  "show_state": true,
+                  "type": "glance",
+                  "entities": [
+                    {
+                      "entity": "input_number.temp_cea_213m"
+                    },
+                    {
+                      "entity": "input_number.hum_cea_213m"
+                    }
+                  ],
+                  "title": "CEA Grenoble 213m"
+                }
+              ],
+              "column_span": 1
+            }
+          ],
+          "header": {
+            "card": {
+              "type": "markdown",
+              "text_only": true,
+              "content": "# Météo Montagne"
+            }
+          },
+          "icon": "mdi:image-filter-hdr-outline",
+          "cards": []
+        },
+        {
+          "type": "sections",
+          "max_columns": 2,
+          "title": "Heaters",
+          "path": "heaters",
+          "icon": "mdi:heating-coil",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "clock_style": "digital",
+                  "clock_size": "medium",
+                  "show_seconds": true,
+                  "no_background": false,
+                  "type": "clock",
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": 1
+                  },
+                  "face_style": "markers"
+                },
+                {
+                  "type": "markdown",
+                  "content": "{% if is_state('switch.heater_kitchen_l1','off')  and is_state('switch.heater_kitchen_l2','off') and is_state('switch.heater_livingroom_l1','off')  and is_state('switch.heater_livingroom_l2','off') and is_state('switch.heater_saloon_l1','off')  and is_state('switch.heater_saloon_l2','off') and is_state('switch.heater_sdb_h_l1','off')  and is_state('switch.heater_sdb_h_l2','off') and is_state('switch.heater_yoann_l1','off')  and is_state('switch.heater_yoann_l2','off') and is_state('switch.heater_amandine_l1','off')  and is_state('switch.heater_amandine_l2','off') and is_state('switch.heater_office_l1','off')  and is_state('switch.heater_office_l2','off') %}\n## Mode :<font color=green > CONFORT </font>\n{% elif is_state('switch.heater_kitchen_l1','on')  and is_state('switch.heater_kitchen_l2','on') and is_state('switch.heater_livingroom_l1','on')  and is_state('switch.heater_livingroom_l2','on') and is_state('switch.heater_saloon_l1','on')  and is_state('switch.heater_saloon_l2','on') and is_state('switch.heater_sdb_h_l1','on')  and is_state('switch.heater_sdb_h_l2','on') and is_state('switch.heater_yoann_l1','on')  and is_state('switch.heater_yoann_l2','on') and is_state('switch.heater_amandine_l1','on')  and is_state('switch.heater_amandine_l2','on') and is_state('switch.heater_office_l1','on')  and is_state('switch.heater_office_l2','on')  %}\n## Mode :<font color=orange > ECO </font>\n{% elif is_state('switch.heater_kitchen_l1','off')  and is_state('switch.heater_kitchen_l2','on') and is_state('switch.heater_livingroom_l1','off')  and is_state('switch.heater_livingroom_l2','on') and is_state('switch.heater_saloon_l1','off')  and is_state('switch.heater_saloon_l2','on') and is_state('switch.heater_sdb_h_l1','off')  and is_state('switch.heater_sdb_h_l2','on') and is_state('switch.heater_yoann_l1','off')  and is_state('switch.heater_yoann_l2','on') and is_state('switch.heater_amandine_l1','off')  and is_state('switch.heater_amandine_l2','on') and is_state('switch.heater_office_l1','off')  and is_state('switch.heater_office_l2','on')  %}\n## Mode :<font color=cyan > HG </font>\n{% elif is_state('switch.heater_kitchen_l1','on')  and is_state('switch.heater_kitchen_l2','off') and is_state('switch.heater_livingroom_l1','on')  and is_state('switch.heater_livingroom_l2','off') and is_state('switch.heater_saloon_l1','on')  and is_state('switch.heater_saloon_l2','off') and is_state('switch.heater_sdb_h_l1','on')  and is_state('switch.heater_sdb_h_l2','off') and is_state('switch.heater_yoann_l1','on')  and is_state('switch.heater_yoann_l2','off') and is_state('switch.heater_amandine_l1','on')  and is_state('switch.heater_amandine_l2','off') and is_state('switch.heater_office_l1','on')  and is_state('switch.heater_office_l2','off')  %}\n## Mode :<font color=red > OFF </font>\n{% else %}\n## Mode :<font color=red > Unknow </font>\n{% endif %}\n",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.chauffage_mode_auto",
+                  "features_position": "bottom",
+                  "vertical": false,
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  },
+                  "name": "AUTO",
+                  "show_entity_picture": false,
+                  "hide_state": false,
+                  "tap_action": {
+                    "action": "none"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.chauffage_mode_confort",
+                  "features_position": "bottom",
+                  "vertical": false,
+                  "name": "CONFORT",
+                  "tap_action": {
+                    "action": "none"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.chauffage_mode_eco",
+                  "features_position": "bottom",
+                  "vertical": false,
+                  "name": "ECO",
+                  "tap_action": {
+                    "action": "none"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.chauffage_mode_hg",
+                  "features_position": "bottom",
+                  "vertical": false,
+                  "name": "Hors-Gel",
+                  "tap_action": {
+                    "action": "none"
+                  }
+                },
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.chauffage_mode_off",
+                  "features_position": "bottom",
+                  "vertical": false,
+                  "name": "OFF",
+                  "tap_action": {
+                    "action": "none"
+                  }
+                },
+                {
+                  "type": "markdown",
+                  "content": "# __Status: Rez de Chaussée__",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  },
+                  "title": "RdC",
+                  "text_only": true
+                },
+                {
+                  "type": "markdown",
+                  "content": "{% if is_state('switch.heater_kitchen_l1','off')  and is_state('switch.heater_kitchen_l2','off')  %}\nKitchen :<font color=#94ff66> __CONFORT__</font>\n{% elif is_state('switch.heater_kitchen_l1','off')  and is_state('switch.heater_kitchen_l2','on')  %}\nKitchen : <font color=cyan> __HG__</font>\n{% elif is_state('switch.heater_kitchen_l1','on')  and  is_state('switch.heater_kitchen_l2','off')  %}\nKitchen : <font color=red> __OFF__</font>\n{% elif is_state('switch.heater_kitchen_l1','on')  and  is_state('switch.heater_kitchen_l2','on')  %}\nKitchen : <font color=orange> __ECO__</font>\n{% endif %}",
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "markdown",
+                  "content": "{% if is_state('switch.heater_saloon_l1','off')  and is_state('switch.heater_saloon_l2','off')  %}\nSaloon :<font color=#94ff66> __CONFORT__</font>\n{% elif is_state('switch.heater_saloon_l1','off')  and is_state('switch.heater_saloon_l2','on')  %}\nSaloon : <font color=cyan> __HG__</font>\n{% elif is_state('switch.heater_saloon_l1','on')  and  is_state('switch.heater_saloon_l2','off')  %}\nSaloon : <font color=red> __OFF__</font>\n{% elif is_state('switch.heater_saloon_l1','on')  and  is_state('switch.heater_saloon_l2','on')  %}\nSaloon : <font color=orange> __ECO__</font>\n{% endif %}",
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "markdown",
+                  "content": "{% if is_state('switch.heater_livingroom_l1','off')  and is_state('switch.heater_livingroom_l2','off')  %}\nLivingRoom :<font color=#94ff66> __CONFORT__</font>\n{% elif is_state('switch.heater_livingroom_l1','off')  and is_state('switch.heater_livingroom_l2','on')  %}\nLivingRoom : <font color=cyan> __HG__</font>\n{% elif is_state('switch.heater_livingroom_l1','on')  and  is_state('switch.heater_livingroom_l2','off')  %}\nLivingRoom : <font color=red> __OFF__</font>\n{% elif is_state('switch.heater_livingroom_l1','on')  and  is_state('switch.heater_livingroom_l2','on')  %}\nLivingRoom : <font color=orange> __ECO__</font>\n{% endif %}",
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "markdown",
+                  "content": "# __Status: Etage__",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  },
+                  "title": "RdC",
+                  "text_only": true
+                },
+                {
+                  "type": "markdown",
+                  "content": "{% if is_state('switch.heater_sdb_h_l1','off')  and is_state('switch.heater_sdb_h_l2','off')  %}\nSdB Haut :<font color=#94ff66> __CONFORT__</font>\n{% elif is_state('switch.heater_sdb_h_l1','off')  and is_state('switch.heater_sdb_h_l2','on')  %}\nSdB Haut : <font color=cyan> __HG__</font>\n{% elif is_state('switch.heater_sdb_h_l1','on')  and  is_state('switch.heater_sdb_h_l2','off')  %}\nSdB Haut : <font color=red> __OFF__</font>\n{% elif is_state('switch.heater_sdb_h_l1','on')  and  is_state('switch.heater_sdb_h_l2','on')  %}\nSdB Haut : <font color=orange> __ECO__</font>\n{% endif %}",
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "markdown",
+                  "content": "{% if is_state('switch.heater_amandine_l1','off')  and is_state('switch.heater_amandine_l2','off')  %}\nAmandine:<font color=#94ff66> __CONFORT__</font>\n{% elif is_state('switch.heater_amandine_l1','off')  and is_state('switch.heater_amandine_l2','on')  %}\nAmandine: <font color=cyan> __HG__</font>\n{% elif is_state('switch.heater_amandine_l1','on')  and  is_state('switch.heater_amandine_l2','off')  %}\nAmandine: <font color=red> __OFF__</font>\n{% elif is_state('switch.heater_amandine_l1','on')  and  is_state('switch.heater_amandine_l2','on')  %}\nAmandine: <font color=orange> __ECO__</font>\n{% endif %}",
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "markdown",
+                  "content": "{% if is_state('switch.heater_yoann_l1','off')  and is_state('switch.heater_yoann_l2','off')  %}\nYoann:<font color=#94ff66> __CONFORT__</font>\n{% elif is_state('switch.heater_yoann_l1','off')  and is_state('switch.heater_yoann_l2','on')  %}\nYoann:<font color=cyan> __HG__</font>\n{% elif is_state('switch.heater_yoann_l1','on')  and  is_state('switch.heater_yoann_l2','off')  %}\nYoann:<font color=red> __OFF__</font>\n{% elif is_state('switch.heater_yoann_l1','on')  and  is_state('switch.heater_yoann_l2','on')  %}\nYoann:<font color=orange> __ECO__</font>\n{% endif %}",
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "markdown",
+                  "content": "{% if is_state('switch.heater_office_l1','off')  and is_state('switch.heater_office_l2','off')  %}\nOffice:<font color=#94ff66> __CONFORT__</font>\n{% elif is_state('switch.heater_office_l1','off')  and is_state('switch.heater_office_l2','on')  %}\nOffice:<font color=cyan> __HG__</font>\n{% elif is_state('switch.heater_office_l1','on')  and  is_state('switch.heater_office_l2','off')  %}\nOffice:<font color=red> __OFF__</font>\n{% elif is_state('switch.heater_office_l1','on')  and  is_state('switch.heater_office_l2','on')  %}\nOffice:<font color=orange> __ECO__</font>\n{% endif %}",
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  }
+                }
+              ]
+            }
+          ],
+          "cards": [],
+          "header": {
+            "card": {
+              "type": "markdown",
+              "text_only": true,
+              "content": "# HEATERS"
+            }
+          }
+        },
+        {
+          "type": "sections",
+          "max_columns": 4,
+          "title": "Lights",
+          "path": "lights",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "clock_style": "digital",
+                  "clock_size": "medium",
+                  "show_seconds": true,
+                  "no_background": false,
+                  "type": "clock",
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": 1
+                  },
+                  "face_style": "markers"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "switch.lampe_terrasse_l2",
+                  "name": "Applique Terrasse",
+                  "show_state": true
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "switch.lampe_terrasse_l1",
+                  "name": "Guirlande Terrasse",
+                  "show_state": true
+                }
+              ]
+            }
+          ],
+          "header": {
+            "card": {
+              "type": "markdown",
+              "text_only": true,
+              "content": "# Lights"
+            }
+          },
+          "icon": "mdi:lightbulb",
+          "cards": []
+        },
+        {
+          "type": "sections",
+          "max_columns": 4,
+          "title": "Energy",
+          "path": "energy",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "clock_style": "digital",
+                  "clock_size": "medium",
+                  "show_seconds": true,
+                  "no_background": false,
+                  "type": "clock",
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": 1
+                  },
+                  "face_style": "markers"
+                },
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.linky_easf01",
+                  "detail": 1,
+                  "name": "HC"
+                },
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.linky_easf02",
+                  "detail": 1,
+                  "name": "HP"
+                },
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.linky_sinsts",
+                  "detail": 1,
+                  "name": "Puissance Instantanée"
+                },
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.linky_ccasn",
+                  "detail": 1,
+                  "name": "Power"
+                },
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.linky_ccasn_1",
+                  "detail": 1,
+                  "name": "Power -1H"
+                },
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.linky_relais",
+                  "detail": 1,
+                  "name": "Relay State"
+                },
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.linky_umoy1",
+                  "detail": 1,
+                  "name": "Voltage ",
+                  "icon": "mdi:current-ac",
+                  "unit": "Vrms"
+                }
+              ]
+            }
+          ],
+          "header": {
+            "card": {
+              "type": "markdown",
+              "text_only": true,
+              "content": "# Linky"
+            }
+          },
+          "icon": "mdi:home-lightning-bolt-outline",
+          "cards": []
+        },
+        {
+          "type": "sections",
+          "max_columns": 4,
+          "title": "Doors",
+          "path": "door-sensors",
+          "icon": "mdi:door",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "clock_style": "digital",
+                  "clock_size": "medium",
+                  "show_seconds": true,
+                  "no_background": false,
+                  "type": "clock",
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  },
+                  "face_style": "markers"
+                },
+                {
+                  "type": "logbook",
+                  "target": {
+                    "entity_id": [
+                      "binary_sensor.0xa4c13814ca738516_contact"
+                    ]
+                  },
+                  "title": "Entry"
+                },
+                {
+                  "type": "logbook",
+                  "title": "Terrasse",
+                  "target": {
+                    "entity_id": [
+                      "binary_sensor.ds_terrasse_contact"
+                    ]
+                  }
+                }
+              ]
+            }
+          ],
+          "cards": [],
+          "header": {
+            "card": {
+              "type": "markdown",
+              "text_only": true,
+              "content": "# Doors Sensors"
+            }
+          }
+        },
+        {
+          "type": "sidebar",
+          "path": "batterie",
+          "title": "Batterie ",
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.0xa4c13814ca738516_battery"
+                },
+                {
+                  "entity": "sensor.ds_terrasse_battery"
+                },
+                {
+                  "entity": "sensor.th_amandine_battery"
+                },
+                {
+                  "entity": "sensor.th_outside_battery"
+                },
+                {
+                  "entity": "sensor.th_saloon_battery"
+                }
+              ],
+              "show_header_toggle": true,
+              "state_color": true,
+              "title": "Batteries Level",
+              "theme": "Custom Theme"
+            }
+          ],
+          "icon": "mdi:battery-outline"
+        },
+        {
+          "type": "sections",
+          "max_columns": 4,
+          "title": "Network",
+          "path": "network",
+          "icon": "mdi:access-point-network",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "tile",
+                  "entity": "input_boolean.internet_connected",
+                  "name": "Network Status",
+                  "vertical": false,
+                  "features_position": "bottom"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "counter.network_reset",
+                  "icon": "mdi:radiobox-marked",
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "counter.reset",
+                    "target": {
+                      "entity_id": "counter.network_reset"
+                    },
+                    "data": {}
+                  },
+                  "name": "Reset WiFi Update Counter"
+                },
+                {
+                  "type": "tile",
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  },
+                  "entity": "counter.network_reset",
+                  "name": "WiFi Update Counter",
+                  "vertical": false,
+                  "features_position": "bottom"
+                },
+                {
+                  "type": "history-graph",
+                  "entities": [
+                    {
+                      "entity": "counter.wifi_reset"
+                    }
+                  ],
+                  "title": "WiFi Reset History",
+                  "logarithmic_scale": false
+                },
+                {
+                  "type": "markdown",
+                  "content": "<b>\n\n<p>\nPublic Name : &nbsp&nbsp&nbspkroa38.duckdns.org:57000\n</p>\n\n<p>\nPublic IP : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ states('input_text.public_ip_addr')  }}\n</p>\n\n<p>\nLocal Name : &nbsp&nbsp&nbsp&nbsp&nbspkroa38.duckdns.org:8123\n</p>\n\n<p>\nLocal IP : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ states('input_text.wifi_ip_addr')  }}\n</p>\n\n<p>\nWiFi SSID : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ states('input_text.wifi_ssid')  }}\n</p>\n\n<p>\nWiFi Signal : &nbsp&nbsp&nbsp&nbsp&nbsp{{ states('input_number.wifi_signal')  }}%\n</p>\n\n</b>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

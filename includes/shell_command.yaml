@@ -1,0 +1,16 @@
+wifi_info: >-
+  ssh -i /config/.ssh/pk -o StrictHostKeyChecking=no -p 22 root@127.0.0.1
+  "ha network info {{ states('input_text.wifi_iface') }} --raw-json"
+
+wifi_reset: >-
+  ssh -i /config/.ssh/pk -o StrictHostKeyChecking=no -p 22 root@127.0.0.1
+  "ha network update {{ states('input_text.wifi_iface') }} --wifi-ssid {{ states('input_text.wifi_ssid') }} --wifi-psk {{ states('input_text.wifi_psk') }} --ipv4-method auto"
+
+cronitor: >-  
+  ssh -i /config/.ssh/pk -o StrictHostKeyChecking=no -p 22 root@127.0.0.1
+  "curl https://cronitor.link/p/{{ states('input_text.cronitor_key') }}/device-heartbeat"
+  
+public_ip_addr: >-  
+  ssh -i /config/.ssh/pk -o StrictHostKeyChecking=no -p 22 root@127.0.0.1
+  "curl -s https://api.ipify.org"
+  

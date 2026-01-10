@@ -1,0 +1,35 @@
+wifi_iface:
+  name: wifi_iface
+  initial: !secret wifi_iface
+  icon: mdi:wifi
+  max: 32
+
+wifi_ssid:
+  name: wifi_ssid
+  initial: !secret wifi_ssid
+  icon: mdi:wifi
+  max: 32
+
+wifi_psk:
+  name: wifi_psk
+  initial: !secret wifi_psk
+  icon: mdi:wifi
+  max: 32
+  
+wifi_ip_addr:
+  name: wifi_ip_addr
+  initial: "192.168.1.100"
+  icon: mdi:wifi
+  max: 32
+
+public_ip_addr:
+  name: public_ip_addr
+  initial: "0.0.0.0"
+  icon: mdi:network-outline
+  max: 32
+  
+cronitor_key:
+  name: cronitor_key
+  initial: !secret cronitor
+  icon: mdi:network-outline  
+  max: 64

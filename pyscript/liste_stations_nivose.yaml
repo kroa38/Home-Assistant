@@ -1,0 +1,29 @@
+- id: '38005402'
+  alias: Col de l'Aigleton 2240m
+  file_helper: input_number.file_number_aigleton_2240m
+  entities:
+    snow: input_number.snow_aigleton_2240m
+    gust: input_number.windgust_aigleton_2240m
+    chill: input_number.windchill_aigleton_2240m
+    wind: input_number.wind_aigleton_2240m
+    temp: input_number.temp_aigleton_2240m
+
+- id: '38187400'
+  alias: Le Gua 1646m
+  file_helper: input_number.file_number_gua_1646m
+  entities:
+    snow: input_number.snow_gua_1646m
+    gust: input_number.windgust_gua_1646m
+    chill: input_number.windchill_gua_1646m
+    wind: input_number.wind_gua_1646m
+    temp: input_number.temp_gua_1646m
+
+- id: '38472403'
+  alias: Col de Porte 1325m
+  file_helper: input_number.file_number_col_de_porte_1325m
+  entities:
+    snow: input_number.snow_col_de_porte_1325m
+    gust: input_number.windgust_col_de_porte_1325m
+    chill: input_number.windchill_col_de_porte_1325m
+    wind: input_number.wind_col_de_porte_1325m
+    temp: input_number.temp_col_de_porte_1325m

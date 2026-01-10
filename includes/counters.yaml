@@ -1,0 +1,13 @@
+# counters.yaml entry
+
+network_reset:
+  name: network_reset
+  initial: 0
+  step: 1
+  icon: mdi:network-outline
+hass_reboot:
+  name: hass_reboot
+  initial: 0
+  step: 1
+  icon: mdi:network-outline
+  

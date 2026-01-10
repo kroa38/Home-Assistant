@@ -1,0 +1,14 @@
+.HA_VERSION
+.cloud/
+.ha_run.lock
+custom_components/
+deps/
+*.log*
+secrets.yaml
+zigbee2mqtt/
+ip_bans.yaml
+.ssh/
+.storage/*
+!.storage/
+!.storage/lovelace.dashboard_home
+!.storage/local_calendar.heater.ics

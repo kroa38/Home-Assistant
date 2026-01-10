@@ -1,0 +1,574 @@
+- id: '1761835766119'
+  alias: detection_porte_terrasse
+  description: detection_porte_terrasse
+  triggers:
+  - trigger: state
+    entity_id:
+    - binary_sensor.ds_terrasse_contact
+    from: 'off'
+    to: 'on'
+  conditions:
+  - condition: sun
+    after: sunset
+    before: sunrise
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: switch.lampe_terrasse_l2
+      state: 'off'
+  actions:
+  - type: turn_on
+    device_id: f6e3dbeb1a8b054b06f8b94a7cc5626b
+    entity_id: 78905b4f94bca138174c9768ee01bf36
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 2
+      seconds: 0
+      milliseconds: 0
+  - type: turn_off
+    device_id: f6e3dbeb1a8b054b06f8b94a7cc5626b
+    entity_id: 78905b4f94bca138174c9768ee01bf36
+    domain: switch
+  mode: single
+- id: '1761835766672'
+  alias: air_quality
+  description: air_quality
+  triggers:
+  - trigger: time_pattern
+    minutes: /30
+  conditions:
+  - condition: state
+    entity_id: input_boolean.internet_connected
+    state:
+    - 'on'
+  actions:
+  - action: pyscript.air_quality
+    metadata: {}
+    data: {}
+  mode: single
+- id: '1761835766480'
+  alias: meteofrance
+  description: recupere les données des stations d observation
+  triggers:
+  - trigger: time_pattern
+    minutes: /15
+  conditions:
+  - condition: state
+    entity_id: input_boolean.internet_connected
+    state:
+    - 'on'
+  actions:
+  - action: pyscript.meteofrance
+    metadata: {}
+    data: {}
+  mode: single
+- id: '1761835766822'
+  alias: get_file_nivose
+  description: demande la creation du fichier climatologique
+  triggers:
+  - trigger: time_pattern
+    minutes: '17'
+  conditions:
+  - condition: state
+    entity_id: input_boolean.internet_connected
+    state:
+    - 'on'
+  actions:
+  - action: pyscript.command_file_nivose
+    metadata: {}
+    data: {}
+  mode: single
+- id: '1761835766011'
+  alias: Guirlande On 9pm during 30min
+  description: allume la guirelande pendant 30min
+  triggers:
+  - trigger: time
+    at: '21:30:00'
+  conditions: []
+  actions:
+  - action: switch.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: switch.lampe_terrasse_l1
+  - delay:
+      hours: 0
+      minutes: 30
+      seconds: 0
+      milliseconds: 0
+  - action: switch.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: switch.lampe_terrasse_l1
+  mode: single
+- id: '1761835766333'
+  alias: chauffage_mode_off
+  description: chauffage_mode_off
+  triggers:
+  - trigger: state
+    entity_id:
+    - input_boolean.chauffage_mode_off
+    to:
+  conditions:
+  - condition: state
+    entity_id: input_boolean.disjoncteur_chauffage
+    state: 'on'
+  actions:
+  - action: automation.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - automation.chauffage_mode_hg
+      - automation.chauffage_mode_eco
+      - automation.chauffage_mode_confort
+      - automation.chauffage_mode_auto
+      - automation.event_calendrier_chauffage_end
+      - automation.event_calendrier_chauffage_start
+  - action: input_boolean.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - input_boolean.chauffage_mode_hg
+      - input_boolean.chauffage_mode_auto
+      - input_boolean.chauffage_mode_eco
+      - input_boolean.chauffage_mode_confort
+  - action: input_boolean.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: input_boolean.chauffage_mode_off
+    enabled: true
+  - action: automation.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - automation.chauffage_mode_hg
+      - automation.chauffage_mode_eco
+      - automation.chauffage_mode_confort
+      - automation.chauffage_mode_auto
+  - repeat:
+      count: 3
+      sequence:
+      - sequence:
+        - action: script.off_chauffage_1er
+          metadata: {}
+          data: {}
+        - action: script.off_chauffage_rdc
+          metadata: {}
+          data: {}
+  mode: single
+- id: '1761835766334'
+  alias: chauffage_mode_hg
+  description: chauffage_mode_hg
+  triggers:
+  - trigger: state
+    entity_id:
+    - input_boolean.chauffage_mode_hg
+    to:
+  conditions:
+  - condition: state
+    entity_id: input_boolean.disjoncteur_chauffage
+    state: 'on'
+  actions:
+  - action: automation.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - automation.chauffage_mode_off
+      - automation.chauffage_mode_eco
+      - automation.chauffage_mode_confort
+      - automation.chauffage_mode_auto
+      - automation.event_calendrier_chauffage_end
+      - automation.event_calendrier_chauffage_start
+  - action: input_boolean.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - input_boolean.chauffage_mode_off
+      - input_boolean.chauffage_mode_auto
+      - input_boolean.chauffage_mode_eco
+      - input_boolean.chauffage_mode_confort
+  - action: input_boolean.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: input_boolean.chauffage_mode_hg
+    enabled: true
+  - action: automation.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - automation.chauffage_mode_off
+      - automation.chauffage_mode_eco
+      - automation.chauffage_mode_confort
+      - automation.chauffage_mode_auto
+  - repeat:
+      count: 3
+      sequence:
+      - sequence:
+        - action: script.hg_chauffage_1er
+          metadata: {}
+          data: {}
+        - action: script.hg_chauffage_rdc
+          metadata: {}
+          data: {}
+  mode: single
+- id: '1761835766335'
+  alias: chauffage_mode_eco
+  description: chauffage_mode_eco
+  triggers:
+  - trigger: state
+    entity_id:
+    - input_boolean.chauffage_mode_eco
+    to:
+  conditions:
+  - condition: state
+    entity_id: input_boolean.disjoncteur_chauffage
+    state: 'on'
+  actions:
+  - action: automation.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - automation.chauffage_mode_hg
+      - automation.chauffage_mode_off
+      - automation.chauffage_mode_confort
+      - automation.chauffage_mode_auto
+      - automation.event_calendrier_chauffage_end
+      - automation.event_calendrier_chauffage_start
+  - action: input_boolean.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - input_boolean.chauffage_mode_hg
+      - input_boolean.chauffage_mode_auto
+      - input_boolean.chauffage_mode_off
+      - input_boolean.chauffage_mode_confort
+  - action: input_boolean.turn_on
+    metadata: {}
+    data: {}
+    enabled: true
+    target:
+      entity_id: input_boolean.chauffage_mode_eco
+  - action: automation.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - automation.chauffage_mode_hg
+      - automation.chauffage_mode_off
+      - automation.chauffage_mode_confort
+      - automation.chauffage_mode_auto
+  - repeat:
+      count: 3
+      sequence:
+      - sequence:
+        - action: script.eco_chauffage_1er
+          metadata: {}
+          data: {}
+        - action: script.eco_chauffage_rdc
+          metadata: {}
+          data: {}
+  mode: single
+- id: '1761835766336'
+  alias: chauffage_mode_confort
+  description: chauffage_mode_confort
+  triggers:
+  - trigger: state
+    entity_id:
+    - input_boolean.chauffage_mode_confort
+    to:
+  conditions:
+  - condition: state
+    entity_id: input_boolean.disjoncteur_chauffage
+    state: 'on'
+  actions:
+  - action: automation.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - automation.chauffage_mode_hg
+      - automation.chauffage_mode_eco
+      - automation.chauffage_mode_off
+      - automation.chauffage_mode_auto
+      - automation.event_calendrier_chauffage_end
+      - automation.event_calendrier_chauffage_start
+  - action: input_boolean.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - input_boolean.chauffage_mode_hg
+      - input_boolean.chauffage_mode_auto
+      - input_boolean.chauffage_mode_eco
+      - input_boolean.chauffage_mode_off
+  - action: input_boolean.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: input_boolean.chauffage_mode_confort
+    enabled: true
+  - action: automation.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - automation.chauffage_mode_hg
+      - automation.chauffage_mode_eco
+      - automation.chauffage_mode_off
+      - automation.chauffage_mode_auto
+  - repeat:
+      count: 3
+      sequence:
+      - sequence:
+        - action: script.confort_chauffage_1er
+          metadata: {}
+          data: {}
+        - action: script.confort_chauffage_rdc
+          metadata: {}
+          data: {}
+  mode: single
+- id: '1761835766337'
+  alias: chauffage_mode_auto
+  description: chauffage_mode_auto
+  triggers:
+  - trigger: state
+    entity_id:
+    - input_boolean.chauffage_mode_auto
+    to:
+  conditions:
+  - condition: state
+    entity_id: input_boolean.disjoncteur_chauffage
+    state: 'on'
+  actions:
+  - action: automation.turn_off
+    metadata: {}
+    data:
+      stop_actions: true
+    target:
+      entity_id:
+      - automation.chauffage_mode_confort
+      - automation.chauffage_mode_eco
+      - automation.chauffage_mode_hg
+      - automation.chauffage_mode_off
+      - automation.event_calendrier_chauffage_end
+      - automation.event_calendrier_chauffage_start
+  - action: input_boolean.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - input_boolean.chauffage_mode_confort
+      - input_boolean.chauffage_mode_eco
+      - input_boolean.chauffage_mode_hg
+      - input_boolean.chauffage_mode_off
+  - action: input_boolean.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: input_boolean.chauffage_mode_auto
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - action: automation.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - automation.chauffage_mode_confort
+      - automation.chauffage_mode_eco
+      - automation.chauffage_mode_hg
+      - automation.chauffage_mode_off
+      - automation.event_calendrier_chauffage_end
+      - automation.event_calendrier_chauffage_start
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: calendar.calendar_heater
+        state: 'on'
+      sequence:
+      - repeat:
+          count: 3
+          sequence:
+          - sequence:
+            - action: script.confort_chauffage_1er
+              metadata: {}
+              data: {}
+            - action: script.confort_chauffage_rdc
+              metadata: {}
+              data: {}
+          - delay:
+              hours: 0
+              minutes: 0
+              seconds: 30
+              milliseconds: 0
+    default:
+    - repeat:
+        count: 3
+        sequence:
+        - sequence:
+          - action: script.eco_chauffage_1er
+            metadata: {}
+            data: {}
+          - action: script.eco_chauffage_rdc
+            metadata: {}
+            data: {}
+  mode: single
+- id: '1761835766338'
+  alias: event_calendrier_chauffage_start
+  description: event_calendrier_chauffage_start
+  triggers:
+  - trigger: calendar
+    entity_id: calendar.calendar_heater
+    event: start
+    offset: 0:0:0
+  conditions:
+  - condition: state
+    entity_id: input_boolean.disjoncteur_chauffage
+    state: 'on'
+  actions:
+  - repeat:
+      count: 3
+      sequence:
+      - sequence:
+        - action: script.confort_chauffage_1er
+          metadata: {}
+          data: {}
+        - action: script.confort_chauffage_rdc
+          metadata: {}
+          data: {}
+  mode: single
+- id: '1761835766339'
+  alias: event_calendrier_chauffage_end
+  description: event_calendrier_chauffage_end
+  triggers:
+  - trigger: calendar
+    entity_id: calendar.calendar_heater
+    event: end
+    offset: 0:0:0
+  conditions:
+  - condition: state
+    entity_id: input_boolean.disjoncteur_chauffage
+    state: 'on'
+  actions:
+  - repeat:
+      count: 3
+      sequence:
+      - sequence:
+        - action: script.eco_chauffage_1er
+          metadata: {}
+          data: {}
+        - action: script.eco_chauffage_rdc
+          metadata: {}
+          data: {}
+  mode: single
+- id: '1761835766369'
+  alias: get_data_nivose
+  description: get_data_nivose
+  triggers:
+  - trigger: time_pattern
+    minutes: '18'
+  conditions:
+  - condition: state
+    entity_id: input_boolean.internet_connected
+    state:
+    - 'on'
+  actions:
+  - action: pyscript.get_data_nivose
+    metadata: {}
+    data: {}
+  mode: single
+- id: '1767629807942'
+  alias: Ping_Internet
+  description: ''
+  triggers:
+  - trigger: time_pattern
+    minutes: /5
+  conditions: []
+  actions:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.8_8_8_8
+        state:
+        - 'on'
+      sequence:
+      - action: input_boolean.turn_on
+        metadata: {}
+        target:
+          entity_id: input_boolean.internet_connected
+        data: {}
+      - action: shell_command.cronitor
+        metadata: {}
+        data: {}
+    - conditions: []
+      sequence:
+      - action: system_log.write
+        metadata: {}
+        data:
+          level: error
+          message: Network is OFF (try to recover)
+      - action: input_boolean.turn_off
+        metadata: {}
+        target:
+          entity_id: input_boolean.internet_connected
+        data: {}
+      - action: shell_command.wifi_reset
+        metadata: {}
+        data: {}
+        enabled: false
+      - action: hassio.host_reboot
+        metadata: {}
+        data: {}
+        enabled: false
+  mode: single
+- id: '1768040171283'
+  alias: Network_Info
+  description: ''
+  triggers:
+  - trigger: time_pattern
+    minutes: /30
+  conditions: []
+  actions:
+  - action: shell_command.wifi_info
+    metadata: {}
+    data: {}
+    response_variable: response
+  - action: input_text.set_value
+    metadata: {}
+    target:
+      entity_id: input_text.wifi_ip_addr
+    data:
+      value: '{{ (response[''stdout''] | from_json).data.ipv4.address[0].split(''/'')[0]
+        }}'
+  - action: input_number.set_value
+    metadata: {}
+    target:
+      entity_id: input_number.wifi_signal
+    data:
+      value: '{{ (response[''stdout''] | from_json).data.wifi.signal | default(0)
+        | int }}'
+  - action: shell_command.public_ip_addr
+    metadata: {}
+    data: {}
+    response_variable: response
+  - action: input_text.set_value
+    metadata: {}
+    target:
+      entity_id: input_text.public_ip_addr
+    data:
+      value: '{{ response[''stdout''] }}'
+  mode: single
