@@ -650,6 +650,10 @@
               "type": "grid",
               "cards": [
                 {
+                  "type": "markdown",
+                  "content": "<b>\n\n<p>\nPublic Name : &nbsp&nbsp&nbspkroa38.duckdns.org:57000\n</p>\n\n<p>\nPublic IP : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ states('input_text.public_ip_addr')  }}\n</p>\n\n<p>\nLocal Name : &nbsp&nbsp&nbsp&nbsp&nbspkroa38.duckdns.org:8123\n</p>\n\n<p>\nLocal IP : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ states('input_text.wifi_ip_addr')  }}\n</p>\n\n<p>\nWiFi SSID : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ states('input_text.wifi_ssid')  }}\n</p>\n\n<p>\nWiFi Signal : &nbsp&nbsp&nbsp&nbsp&nbsp{{ states('input_number.wifi_signal')  }}%\n</p>\n\n</b>"
+                },
+                {
                   "type": "tile",
                   "entity": "input_boolean.internet_connected",
                   "name": "Network Status",
@@ -692,14 +696,17 @@
                   ],
                   "title": "WiFi Reset History",
                   "logarithmic_scale": false
-                },
-                {
-                  "type": "markdown",
-                  "content": "<b>\n\n<p>\nPublic Name : &nbsp&nbsp&nbspkroa38.duckdns.org:57000\n</p>\n\n<p>\nPublic IP : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ states('input_text.public_ip_addr')  }}\n</p>\n\n<p>\nLocal Name : &nbsp&nbsp&nbsp&nbsp&nbspkroa38.duckdns.org:8123\n</p>\n\n<p>\nLocal IP : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ states('input_text.wifi_ip_addr')  }}\n</p>\n\n<p>\nWiFi SSID : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ states('input_text.wifi_ssid')  }}\n</p>\n\n<p>\nWiFi Signal : &nbsp&nbsp&nbsp&nbsp&nbsp{{ states('input_number.wifi_signal')  }}%\n</p>\n\n</b>"
                 }
               ]
             }
-          ]
+          ],
+          "header": {
+            "card": {
+              "type": "markdown",
+              "text_only": true,
+              "content": "# Network Status"
+            }
+          }
         }
       ]
     }

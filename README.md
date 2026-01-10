@@ -18,10 +18,18 @@ Zigbee Devices
 <br>
 <br>
 
-Fil Pilote Devices  
-Tuya or Aubess 2 Gang switch modified with 2 diodes
+### Fil Pilote Devices  
+
+Principes  
 
 <img src="images/fil_pilote.png" width=30%>
+<br>
+<br>
+
+Tuya or Aubess 2 Gangs switch modified with 2 diodes  
+
+<img src="images/Diodes_FP.png" width=30%>
+
 <br>
 <br>
 <br>
