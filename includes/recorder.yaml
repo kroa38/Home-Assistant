@@ -45,3 +45,5 @@ include:
     - sensor.linky_easf01
     - sensor.linky_easf02
     
+    - input_text.public_ip_addr
+    

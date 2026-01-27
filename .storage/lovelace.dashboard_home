@@ -25,15 +25,11 @@
                 },
                 {
                   "type": "markdown",
-                  "content": "  {% if states('input_number.air_quality') | int == 1 %}\n  ## __Indice Atmo 1/6__ :<font color=#4CE3C2 > __Bon__</font>\n  {% elif states('input_number.air_quality') | int == 2 %}\n  ## __Indice Atmo 2/6__ :<font color=#4CC6A1 > __Moyen__</font>\n  {% elif states('input_number.air_quality') | int == 3 %}\n  ## __Indice Atmo 3/6__ :<font color=#F7E04B > __Dégradé__</font>\n  {% elif states('input_number.air_quality') | int == 4 %}\n  ## __Indice Atmo 4/6__ :<font color=#F95D5D > __Mauvais__</font>\n  {% elif states('input_number.air_quality') | int == 5 %}\n  ## __Indice Atmo 5/6__ :<font color=#9C0A3E > __Très mauvais__</font>\n  {% elif states('input_number.air_quality') | int == 6 %}\n  ## __Indice Atmo 6/6__ :<font color=#8B1D9B > __Extrêmement mauvais__</font> \n  {% endif %}"
+                  "content": "{% if is_state('switch.heater_kitchen_l1','off')  and\nis_state('switch.heater_kitchen_l2','off') and\nis_state('switch.heater_livingroom_l1','off')  and\nis_state('switch.heater_livingroom_l2','off') and\nis_state('switch.heater_saloon_l1','off')  and\nis_state('switch.heater_saloon_l2','off') and\nis_state('switch.heater_sdb_h_l1','off')  and\nis_state('switch.heater_sdb_h_l2','off') and\nis_state('switch.heater_yoann_l1','off')  and\nis_state('switch.heater_yoann_l2','off') and\nis_state('switch.heater_amandine_l1','off')  and\nis_state('switch.heater_amandine_l2','off') and\nis_state('switch.heater_office_l1','off')  and\nis_state('switch.heater_office_l2','off') %}\n\n## Chauffage Mode :<font color=#94ff66 > CONFORT </font>\n\n{% elif is_state('switch.heater_kitchen_l1','on')  and\nis_state('switch.heater_kitchen_l2','on') and\nis_state('switch.heater_livingroom_l1','on')  and\nis_state('switch.heater_livingroom_l2','on') and\nis_state('switch.heater_saloon_l1','on')  and\nis_state('switch.heater_saloon_l2','on') and\nis_state('switch.heater_sdb_h_l1','on')  and\nis_state('switch.heater_sdb_h_l2','on') and\nis_state('switch.heater_yoann_l1','on')  and\nis_state('switch.heater_yoann_l2','on') and\nis_state('switch.heater_amandine_l1','on')  and\nis_state('switch.heater_amandine_l2','on') and\nis_state('switch.heater_office_l1','on')  and\nis_state('switch.heater_office_l2','on')  %}\n\n## Chauffage Mode :<font color=orange > ECO </font>\n\n{% elif is_state('switch.heater_kitchen_l1','off')  and\nis_state('switch.heater_kitchen_l2','on') and\nis_state('switch.heater_livingroom_l1','off')  and\nis_state('switch.heater_livingroom_l2','on') and\nis_state('switch.heater_saloon_l1','off')  and\nis_state('switch.heater_saloon_l2','on') and\nis_state('switch.heater_sdb_h_l1','off')  and\nis_state('switch.heater_sdb_h_l2','on') and\nis_state('switch.heater_yoann_l1','off')  and\nis_state('switch.heater_yoann_l2','on') and\nis_state('switch.heater_amandine_l1','off')  and\nis_state('switch.heater_amandine_l2','on') and\nis_state('switch.heater_office_l1','off')  and\nis_state('switch.heater_office_l2','on')  %}\n\n## Chauffage Mode :<font color=cyan > HG </font>\n\n{% elif is_state('switch.heater_kitchen_l1','on')  and\nis_state('switch.heater_kitchen_l2','off') and\nis_state('switch.heater_livingroom_l1','on')  and\nis_state('switch.heater_livingroom_l2','off') and\nis_state('switch.heater_saloon_l1','on')  and\nis_state('switch.heater_saloon_l2','off') and\nis_state('switch.heater_sdb_h_l1','on')  and\nis_state('switch.heater_sdb_h_l2','off') and\nis_state('switch.heater_yoann_l1','on')  and\nis_state('switch.heater_yoann_l2','off') and\nis_state('switch.heater_amandine_l1','on')  and\nis_state('switch.heater_amandine_l2','off') and\nis_state('switch.heater_office_l1','on')  and\nis_state('switch.heater_office_l2','off')  %}\n\n## Chauffage Mode :<font color=red > OFF </font>\n\n{% else %}\n\n## Chauffage Mode :<font color=red > Unknow </font>\n\n{% endif %}"
                 },
                 {
                   "type": "markdown",
-                  "content": "{% if is_state('switch.heater_kitchen_l1','off')  and is_state('switch.heater_kitchen_l2','off') and is_state('switch.heater_livingroom_l1','off')  and is_state('switch.heater_livingroom_l2','off') and is_state('switch.heater_saloon_l1','off')  and is_state('switch.heater_saloon_l2','off') and is_state('switch.heater_sdb_h_l1','off')  and is_state('switch.heater_sdb_h_l2','off') and is_state('switch.heater_yoann_l1','off')  and is_state('switch.heater_yoann_l2','off') and is_state('switch.heater_amandine_l1','off')  and is_state('switch.heater_amandine_l2','off') and is_state('switch.heater_office_l1','off')  and is_state('switch.heater_office_l2','off') %}\n## Mode :<font color=green > CONFORT </font>\n{% elif is_state('switch.heater_kitchen_l1','on')  and is_state('switch.heater_kitchen_l2','on') and is_state('switch.heater_livingroom_l1','on')  and is_state('switch.heater_livingroom_l2','on') and is_state('switch.heater_saloon_l1','on')  and is_state('switch.heater_saloon_l2','on') and is_state('switch.heater_sdb_h_l1','on')  and is_state('switch.heater_sdb_h_l2','on') and is_state('switch.heater_yoann_l1','on')  and is_state('switch.heater_yoann_l2','on') and is_state('switch.heater_amandine_l1','on')  and is_state('switch.heater_amandine_l2','on') and is_state('switch.heater_office_l1','on')  and is_state('switch.heater_office_l2','on')  %}\n## Mode :<font color=orange > ECO </font>\n{% elif is_state('switch.heater_kitchen_l1','off')  and is_state('switch.heater_kitchen_l2','on') and is_state('switch.heater_livingroom_l1','off')  and is_state('switch.heater_livingroom_l2','on') and is_state('switch.heater_saloon_l1','off')  and is_state('switch.heater_saloon_l2','on') and is_state('switch.heater_sdb_h_l1','off')  and is_state('switch.heater_sdb_h_l2','on') and is_state('switch.heater_yoann_l1','off')  and is_state('switch.heater_yoann_l2','on') and is_state('switch.heater_amandine_l1','off')  and is_state('switch.heater_amandine_l2','on') and is_state('switch.heater_office_l1','off')  and is_state('switch.heater_office_l2','on')  %}\n## Mode :<font color=cyan > HG </font>\n{% elif is_state('switch.heater_kitchen_l1','on')  and is_state('switch.heater_kitchen_l2','off') and is_state('switch.heater_livingroom_l1','on')  and is_state('switch.heater_livingroom_l2','off') and is_state('switch.heater_saloon_l1','on')  and is_state('switch.heater_saloon_l2','off') and is_state('switch.heater_sdb_h_l1','on')  and is_state('switch.heater_sdb_h_l2','off') and is_state('switch.heater_yoann_l1','on')  and is_state('switch.heater_yoann_l2','off') and is_state('switch.heater_amandine_l1','on')  and is_state('switch.heater_amandine_l2','off') and is_state('switch.heater_office_l1','on')  and is_state('switch.heater_office_l2','off')  %}\n## Mode :<font color=red > OFF </font>\n{% else %}\n## Mode :<font color=red > Unknow </font>\n{% endif %}\n\n",
-                  "grid_options": {
-                    "columns": 12,
-                    "rows": 1
-                  }
+                  "content": "  {% if states('input_number.air_quality') | int == 1 %}\n  ## __Indice Atmo 1/6__ :<font color=#4CE3C2 > __Bon__</font>\n  {% elif states('input_number.air_quality') | int == 2 %}\n  ## __Indice Atmo 2/6__ :<font color=#4CC6A1 > __Moyen__</font>\n  {% elif states('input_number.air_quality') | int == 3 %}\n  ## __Indice Atmo 3/6__ :<font color=#F7E04B > __Dégradé__</font>\n  {% elif states('input_number.air_quality') | int == 4 %}\n  ## __Indice Atmo 4/6__ :<font color=#F95D5D > __Mauvais__</font>\n  {% elif states('input_number.air_quality') | int == 5 %}\n  ## __Indice Atmo 5/6__ :<font color=#9C0A3E > __Très mauvais__</font>\n  {% elif states('input_number.air_quality') | int == 6 %}\n  ## __Indice Atmo 6/6__ :<font color=#8B1D9B > __Extrêmement mauvais__</font> \n  {% endif %}"
                 },
                 {
                   "graph": "line",
@@ -76,6 +72,22 @@
                   "entity": "sensor.th_amandine_humidity",
                   "detail": 2,
                   "name": "Hum Amandine"
+                },
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "detail": 2,
+                  "entity": "sensor.th_yoann_temperature",
+                  "name": {
+                    "type": "device"
+                  }
+                },
+                {
+                  "graph": "line",
+                  "type": "sensor",
+                  "detail": 2,
+                  "entity": "sensor.th_yoann_humidity",
+                  "name": "Hum_Yoann"
                 }
               ]
             }
@@ -270,11 +282,7 @@
                 },
                 {
                   "type": "markdown",
-                  "content": "{% if is_state('switch.heater_kitchen_l1','off')  and is_state('switch.heater_kitchen_l2','off') and is_state('switch.heater_livingroom_l1','off')  and is_state('switch.heater_livingroom_l2','off') and is_state('switch.heater_saloon_l1','off')  and is_state('switch.heater_saloon_l2','off') and is_state('switch.heater_sdb_h_l1','off')  and is_state('switch.heater_sdb_h_l2','off') and is_state('switch.heater_yoann_l1','off')  and is_state('switch.heater_yoann_l2','off') and is_state('switch.heater_amandine_l1','off')  and is_state('switch.heater_amandine_l2','off') and is_state('switch.heater_office_l1','off')  and is_state('switch.heater_office_l2','off') %}\n## Mode :<font color=green > CONFORT </font>\n{% elif is_state('switch.heater_kitchen_l1','on')  and is_state('switch.heater_kitchen_l2','on') and is_state('switch.heater_livingroom_l1','on')  and is_state('switch.heater_livingroom_l2','on') and is_state('switch.heater_saloon_l1','on')  and is_state('switch.heater_saloon_l2','on') and is_state('switch.heater_sdb_h_l1','on')  and is_state('switch.heater_sdb_h_l2','on') and is_state('switch.heater_yoann_l1','on')  and is_state('switch.heater_yoann_l2','on') and is_state('switch.heater_amandine_l1','on')  and is_state('switch.heater_amandine_l2','on') and is_state('switch.heater_office_l1','on')  and is_state('switch.heater_office_l2','on')  %}\n## Mode :<font color=orange > ECO </font>\n{% elif is_state('switch.heater_kitchen_l1','off')  and is_state('switch.heater_kitchen_l2','on') and is_state('switch.heater_livingroom_l1','off')  and is_state('switch.heater_livingroom_l2','on') and is_state('switch.heater_saloon_l1','off')  and is_state('switch.heater_saloon_l2','on') and is_state('switch.heater_sdb_h_l1','off')  and is_state('switch.heater_sdb_h_l2','on') and is_state('switch.heater_yoann_l1','off')  and is_state('switch.heater_yoann_l2','on') and is_state('switch.heater_amandine_l1','off')  and is_state('switch.heater_amandine_l2','on') and is_state('switch.heater_office_l1','off')  and is_state('switch.heater_office_l2','on')  %}\n## Mode :<font color=cyan > HG </font>\n{% elif is_state('switch.heater_kitchen_l1','on')  and is_state('switch.heater_kitchen_l2','off') and is_state('switch.heater_livingroom_l1','on')  and is_state('switch.heater_livingroom_l2','off') and is_state('switch.heater_saloon_l1','on')  and is_state('switch.heater_saloon_l2','off') and is_state('switch.heater_sdb_h_l1','on')  and is_state('switch.heater_sdb_h_l2','off') and is_state('switch.heater_yoann_l1','on')  and is_state('switch.heater_yoann_l2','off') and is_state('switch.heater_amandine_l1','on')  and is_state('switch.heater_amandine_l2','off') and is_state('switch.heater_office_l1','on')  and is_state('switch.heater_office_l2','off')  %}\n## Mode :<font color=red > OFF </font>\n{% else %}\n## Mode :<font color=red > Unknow </font>\n{% endif %}\n",
-                  "grid_options": {
-                    "columns": 12,
-                    "rows": 1
-                  }
+                  "content": "{% if is_state('switch.heater_kitchen_l1','off')  and\nis_state('switch.heater_kitchen_l2','off') and\nis_state('switch.heater_livingroom_l1','off')  and\nis_state('switch.heater_livingroom_l2','off') and\nis_state('switch.heater_saloon_l1','off')  and\nis_state('switch.heater_saloon_l2','off') and\nis_state('switch.heater_sdb_h_l1','off')  and\nis_state('switch.heater_sdb_h_l2','off') and\nis_state('switch.heater_yoann_l1','off')  and\nis_state('switch.heater_yoann_l2','off') and\nis_state('switch.heater_amandine_l1','off')  and\nis_state('switch.heater_amandine_l2','off') and\nis_state('switch.heater_office_l1','off')  and\nis_state('switch.heater_office_l2','off') %}\n\n## Mode :<font color=#94ff66 > CONFORT </font>\n\n{% elif is_state('switch.heater_kitchen_l1','on')  and\nis_state('switch.heater_kitchen_l2','on') and\nis_state('switch.heater_livingroom_l1','on')  and\nis_state('switch.heater_livingroom_l2','on') and\nis_state('switch.heater_saloon_l1','on')  and\nis_state('switch.heater_saloon_l2','on') and\nis_state('switch.heater_sdb_h_l1','on')  and\nis_state('switch.heater_sdb_h_l2','on') and\nis_state('switch.heater_yoann_l1','on')  and\nis_state('switch.heater_yoann_l2','on') and\nis_state('switch.heater_amandine_l1','on')  and\nis_state('switch.heater_amandine_l2','on') and\nis_state('switch.heater_office_l1','on')  and\nis_state('switch.heater_office_l2','on')  %}\n\n## Mode :<font color=orange > ECO </font>\n\n{% elif is_state('switch.heater_kitchen_l1','off')  and\nis_state('switch.heater_kitchen_l2','on') and\nis_state('switch.heater_livingroom_l1','off')  and\nis_state('switch.heater_livingroom_l2','on') and\nis_state('switch.heater_saloon_l1','off')  and\nis_state('switch.heater_saloon_l2','on') and\nis_state('switch.heater_sdb_h_l1','off')  and\nis_state('switch.heater_sdb_h_l2','on') and\nis_state('switch.heater_yoann_l1','off')  and\nis_state('switch.heater_yoann_l2','on') and\nis_state('switch.heater_amandine_l1','off')  and\nis_state('switch.heater_amandine_l2','on') and\nis_state('switch.heater_office_l1','off')  and\nis_state('switch.heater_office_l2','on')  %}\n\n## Mode :<font color=cyan > HG </font>\n\n{% elif is_state('switch.heater_kitchen_l1','on')  and\nis_state('switch.heater_kitchen_l2','off') and\nis_state('switch.heater_livingroom_l1','on')  and\nis_state('switch.heater_livingroom_l2','off') and\nis_state('switch.heater_saloon_l1','on')  and\nis_state('switch.heater_saloon_l2','off') and\nis_state('switch.heater_sdb_h_l1','on')  and\nis_state('switch.heater_sdb_h_l2','off') and\nis_state('switch.heater_yoann_l1','on')  and\nis_state('switch.heater_yoann_l2','off') and\nis_state('switch.heater_amandine_l1','on')  and\nis_state('switch.heater_amandine_l2','off') and\nis_state('switch.heater_office_l1','on')  and\nis_state('switch.heater_office_l2','off')  %}\n\n## Mode :<font color=red > OFF </font>\n\n{% else %}\n\n## Mode :<font color=red > Unknow </font>\n\n{% endif %}"
                 },
                 {
                   "type": "tile",
@@ -616,19 +624,22 @@
               "type": "entities",
               "entities": [
                 {
+                  "entity": "sensor.th_outside_battery"
+                },
+                {
                   "entity": "sensor.0xa4c13814ca738516_battery"
                 },
                 {
                   "entity": "sensor.ds_terrasse_battery"
                 },
                 {
+                  "entity": "sensor.th_saloon_battery"
+                },
+                {
                   "entity": "sensor.th_amandine_battery"
                 },
                 {
-                  "entity": "sensor.th_outside_battery"
-                },
-                {
-                  "entity": "sensor.th_saloon_battery"
+                  "entity": "sensor.th_yoann_battery"
                 }
               ],
               "show_header_toggle": true,
@@ -691,11 +702,20 @@
                   "type": "history-graph",
                   "entities": [
                     {
-                      "entity": "counter.wifi_reset"
+                      "entity": "counter.network_reset"
                     }
                   ],
                   "title": "WiFi Reset History",
                   "logarithmic_scale": false
+                },
+                {
+                  "type": "logbook",
+                  "title": "Ip change ",
+                  "target": {
+                    "entity_id": [
+                      "input_text.public_ip_addr"
+                    ]
+                  }
                 }
               ]
             }

@@ -36,7 +36,7 @@
   description: air_quality
   triggers:
   - trigger: time_pattern
-    minutes: /30
+    minutes: /31
   conditions:
   - condition: state
     entity_id: input_boolean.internet_connected
@@ -52,7 +52,7 @@
   description: recupere les données des stations d observation
   triggers:
   - trigger: time_pattern
-    minutes: /15
+    minutes: /16
   conditions:
   - condition: state
     entity_id: input_boolean.internet_connected
@@ -521,11 +521,13 @@
         data:
           level: error
           message: Network is OFF (try to recover)
+        enabled: false
       - action: input_boolean.turn_off
         metadata: {}
         target:
           entity_id: input_boolean.internet_connected
         data: {}
+        enabled: false
       - action: shell_command.wifi_reset
         metadata: {}
         data: {}

@@ -49,5 +49,5 @@ shell_command: !include includes/shell_command.yaml
 
 
 system_log:
-  max_entries: 80
+  max_entries: 30
   
