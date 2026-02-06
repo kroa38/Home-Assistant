@@ -574,3 +574,17 @@
     data:
       value: '{{ response[''stdout''] }}'
   mode: single
+- id: '1769853516998'
+  alias: System_Reboot
+  description: ''
+  triggers:
+  - trigger: time_pattern
+    hours: '04'
+    minutes: '37'
+    seconds: '00'
+  conditions: []
+  actions:
+  - action: hassio.host_reboot
+    metadata: {}
+    data: {}
+  mode: single
