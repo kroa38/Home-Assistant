@@ -12,18 +12,6 @@
               "type": "grid",
               "cards": [
                 {
-                  "clock_style": "digital",
-                  "clock_size": "medium",
-                  "show_seconds": true,
-                  "no_background": true,
-                  "type": "clock",
-                  "grid_options": {
-                    "rows": 1,
-                    "columns": "full"
-                  },
-                  "face_style": "markers"
-                },
-                {
                   "type": "markdown",
                   "content": "{% if is_state('switch.heater_kitchen_l1','off')  and\nis_state('switch.heater_kitchen_l2','off') and\nis_state('switch.heater_livingroom_l1','off')  and\nis_state('switch.heater_livingroom_l2','off') and\nis_state('switch.heater_saloon_l1','off')  and\nis_state('switch.heater_saloon_l2','off') and\nis_state('switch.heater_sdb_h_l1','off')  and\nis_state('switch.heater_sdb_h_l2','off') and\nis_state('switch.heater_yoann_l1','off')  and\nis_state('switch.heater_yoann_l2','off') and\nis_state('switch.heater_amandine_l1','off')  and\nis_state('switch.heater_amandine_l2','off') and\nis_state('switch.heater_office_l1','off')  and\nis_state('switch.heater_office_l2','off') %}\n\n## Chauffage Mode :<font color=#94ff66 > CONFORT </font>\n\n{% elif is_state('switch.heater_kitchen_l1','on')  and\nis_state('switch.heater_kitchen_l2','on') and\nis_state('switch.heater_livingroom_l1','on')  and\nis_state('switch.heater_livingroom_l2','on') and\nis_state('switch.heater_saloon_l1','on')  and\nis_state('switch.heater_saloon_l2','on') and\nis_state('switch.heater_sdb_h_l1','on')  and\nis_state('switch.heater_sdb_h_l2','on') and\nis_state('switch.heater_yoann_l1','on')  and\nis_state('switch.heater_yoann_l2','on') and\nis_state('switch.heater_amandine_l1','on')  and\nis_state('switch.heater_amandine_l2','on') and\nis_state('switch.heater_office_l1','on')  and\nis_state('switch.heater_office_l2','on')  %}\n\n## Chauffage Mode :<font color=orange > ECO </font>\n\n{% elif is_state('switch.heater_kitchen_l1','off')  and\nis_state('switch.heater_kitchen_l2','on') and\nis_state('switch.heater_livingroom_l1','off')  and\nis_state('switch.heater_livingroom_l2','on') and\nis_state('switch.heater_saloon_l1','off')  and\nis_state('switch.heater_saloon_l2','on') and\nis_state('switch.heater_sdb_h_l1','off')  and\nis_state('switch.heater_sdb_h_l2','on') and\nis_state('switch.heater_yoann_l1','off')  and\nis_state('switch.heater_yoann_l2','on') and\nis_state('switch.heater_amandine_l1','off')  and\nis_state('switch.heater_amandine_l2','on') and\nis_state('switch.heater_office_l1','off')  and\nis_state('switch.heater_office_l2','on')  %}\n\n## Chauffage Mode :<font color=cyan > HG </font>\n\n{% elif is_state('switch.heater_kitchen_l1','on')  and\nis_state('switch.heater_kitchen_l2','off') and\nis_state('switch.heater_livingroom_l1','on')  and\nis_state('switch.heater_livingroom_l2','off') and\nis_state('switch.heater_saloon_l1','on')  and\nis_state('switch.heater_saloon_l2','off') and\nis_state('switch.heater_sdb_h_l1','on')  and\nis_state('switch.heater_sdb_h_l2','off') and\nis_state('switch.heater_yoann_l1','on')  and\nis_state('switch.heater_yoann_l2','off') and\nis_state('switch.heater_amandine_l1','on')  and\nis_state('switch.heater_amandine_l2','off') and\nis_state('switch.heater_office_l1','on')  and\nis_state('switch.heater_office_l2','off')  %}\n\n## Chauffage Mode :<font color=red > OFF </font>\n\n{% else %}\n\n## Chauffage Mode :<font color=red > Unknow </font>\n\n{% endif %}"
                 },
@@ -96,7 +84,7 @@
             "card": {
               "type": "markdown",
               "text_only": true,
-              "content": "# Temperature & Humidity"
+              "content": "# Temp & Hum"
             }
           },
           "type": "sections",
@@ -252,7 +240,7 @@
             "card": {
               "type": "markdown",
               "text_only": true,
-              "content": "# Météo Montagne"
+              "content": "# Montagne"
             }
           },
           "icon": "mdi:image-filter-hdr-outline",
@@ -268,18 +256,6 @@
             {
               "type": "grid",
               "cards": [
-                {
-                  "clock_style": "digital",
-                  "clock_size": "medium",
-                  "show_seconds": true,
-                  "no_background": false,
-                  "type": "clock",
-                  "grid_options": {
-                    "columns": "full",
-                    "rows": 1
-                  },
-                  "face_style": "markers"
-                },
                 {
                   "type": "markdown",
                   "content": "{% if is_state('switch.heater_kitchen_l1','off')  and\nis_state('switch.heater_kitchen_l2','off') and\nis_state('switch.heater_livingroom_l1','off')  and\nis_state('switch.heater_livingroom_l2','off') and\nis_state('switch.heater_saloon_l1','off')  and\nis_state('switch.heater_saloon_l2','off') and\nis_state('switch.heater_sdb_h_l1','off')  and\nis_state('switch.heater_sdb_h_l2','off') and\nis_state('switch.heater_yoann_l1','off')  and\nis_state('switch.heater_yoann_l2','off') and\nis_state('switch.heater_amandine_l1','off')  and\nis_state('switch.heater_amandine_l2','off') and\nis_state('switch.heater_office_l1','off')  and\nis_state('switch.heater_office_l2','off') %}\n\n## Mode :<font color=#94ff66 > CONFORT </font>\n\n{% elif is_state('switch.heater_kitchen_l1','on')  and\nis_state('switch.heater_kitchen_l2','on') and\nis_state('switch.heater_livingroom_l1','on')  and\nis_state('switch.heater_livingroom_l2','on') and\nis_state('switch.heater_saloon_l1','on')  and\nis_state('switch.heater_saloon_l2','on') and\nis_state('switch.heater_sdb_h_l1','on')  and\nis_state('switch.heater_sdb_h_l2','on') and\nis_state('switch.heater_yoann_l1','on')  and\nis_state('switch.heater_yoann_l2','on') and\nis_state('switch.heater_amandine_l1','on')  and\nis_state('switch.heater_amandine_l2','on') and\nis_state('switch.heater_office_l1','on')  and\nis_state('switch.heater_office_l2','on')  %}\n\n## Mode :<font color=orange > ECO </font>\n\n{% elif is_state('switch.heater_kitchen_l1','off')  and\nis_state('switch.heater_kitchen_l2','on') and\nis_state('switch.heater_livingroom_l1','off')  and\nis_state('switch.heater_livingroom_l2','on') and\nis_state('switch.heater_saloon_l1','off')  and\nis_state('switch.heater_saloon_l2','on') and\nis_state('switch.heater_sdb_h_l1','off')  and\nis_state('switch.heater_sdb_h_l2','on') and\nis_state('switch.heater_yoann_l1','off')  and\nis_state('switch.heater_yoann_l2','on') and\nis_state('switch.heater_amandine_l1','off')  and\nis_state('switch.heater_amandine_l2','on') and\nis_state('switch.heater_office_l1','off')  and\nis_state('switch.heater_office_l2','on')  %}\n\n## Mode :<font color=cyan > HG </font>\n\n{% elif is_state('switch.heater_kitchen_l1','on')  and\nis_state('switch.heater_kitchen_l2','off') and\nis_state('switch.heater_livingroom_l1','on')  and\nis_state('switch.heater_livingroom_l2','off') and\nis_state('switch.heater_saloon_l1','on')  and\nis_state('switch.heater_saloon_l2','off') and\nis_state('switch.heater_sdb_h_l1','on')  and\nis_state('switch.heater_sdb_h_l2','off') and\nis_state('switch.heater_yoann_l1','on')  and\nis_state('switch.heater_yoann_l2','off') and\nis_state('switch.heater_amandine_l1','on')  and\nis_state('switch.heater_amandine_l2','off') and\nis_state('switch.heater_office_l1','on')  and\nis_state('switch.heater_office_l2','off')  %}\n\n## Mode :<font color=red > OFF </font>\n\n{% else %}\n\n## Mode :<font color=red > Unknow </font>\n\n{% endif %}"
@@ -424,7 +400,7 @@
             "card": {
               "type": "markdown",
               "text_only": true,
-              "content": "# HEATERS"
+              "content": "# Chauffage "
             }
           }
         },
@@ -472,7 +448,7 @@
             "card": {
               "type": "markdown",
               "text_only": true,
-              "content": "# Lights"
+              "content": "# Lumières"
             }
           },
           "icon": "mdi:lightbulb",
@@ -487,18 +463,6 @@
             {
               "type": "grid",
               "cards": [
-                {
-                  "clock_style": "digital",
-                  "clock_size": "medium",
-                  "show_seconds": true,
-                  "no_background": false,
-                  "type": "clock",
-                  "grid_options": {
-                    "columns": "full",
-                    "rows": 1
-                  },
-                  "face_style": "markers"
-                },
                 {
                   "graph": "line",
                   "type": "sensor",
@@ -574,18 +538,6 @@
               "type": "grid",
               "cards": [
                 {
-                  "clock_style": "digital",
-                  "clock_size": "medium",
-                  "show_seconds": true,
-                  "no_background": false,
-                  "type": "clock",
-                  "grid_options": {
-                    "columns": 12,
-                    "rows": 1
-                  },
-                  "face_style": "markers"
-                },
-                {
                   "type": "logbook",
                   "target": {
                     "entity_id": [
@@ -611,7 +563,7 @@
             "card": {
               "type": "markdown",
               "text_only": true,
-              "content": "# Doors Sensors"
+              "content": "# Portes"
             }
           }
         },
@@ -662,7 +614,7 @@
               "cards": [
                 {
                   "type": "markdown",
-                  "content": "<b>\n\n<p>\nPublic Name : &nbsp&nbsp&nbspkroa38.duckdns.org:57000\n</p>\n\n<p>\nPublic IP : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ states('input_text.public_ip_addr')  }}\n</p>\n\n<p>\nLocal Name : &nbsp&nbsp&nbsp&nbsp&nbspkroa38.duckdns.org:8123\n</p>\n\n<p>\nLocal IP : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ states('input_text.wifi_ip_addr')  }}\n</p>\n\n<p>\nWiFi SSID : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ states('input_text.wifi_ssid')  }}\n</p>\n\n<p>\nWiFi Signal : &nbsp&nbsp&nbsp&nbsp&nbsp{{ states('input_number.wifi_signal')  }}%\n</p>\n\n</b>"
+                  "content": "<b>\n<p>\nTime : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ states('sensor.time')  }}\n</p>\n<p>\nPublic Name : &nbsp&nbsp&nbspkroa38.duckdns.org:57000\n</p>\n\n<p>\nPublic IP : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ states('input_text.public_ip_addr')  }}\n</p>\n\n<p>\nLocal Name : &nbsp&nbsp&nbsp&nbsp&nbspkroa38.duckdns.org:8123\n</p>\n\n<p>\nLocal IP : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ states('input_text.wifi_ip_addr')  }}\n</p>\n\n<p>\nWiFi SSID : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ states('input_text.wifi_ssid')  }}\n</p>\n\n<p>\nWiFi Signal : &nbsp&nbsp&nbsp&nbsp&nbsp{{ states('input_number.wifi_signal')  }}%\n</p>\n\n</b>"
                 },
                 {
                   "type": "tile",

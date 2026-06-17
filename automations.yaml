@@ -11,6 +11,8 @@
   - condition: sun
     after: sunset
     before: sunrise
+    after_offset: 00:15:00
+    before_offset: 00:15:00
   - condition: and
     conditions:
     - condition: state
@@ -84,7 +86,7 @@
   description: allume la guirelande pendant 30min
   triggers:
   - trigger: time
-    at: '21:30:00'
+    at: '19:30:00'
   conditions: []
   actions:
   - action: switch.turn_on
@@ -496,7 +498,7 @@
   description: ''
   triggers:
   - trigger: time_pattern
-    minutes: /5
+    minutes: /15
   conditions: []
   actions:
   - choose:

@@ -12,51 +12,51 @@ from aiofile import async_open
 # Documentation
 # https://confluence-meteofrance.atlassian.net/wiki/spaces/OpenDataMeteoFrance/overview?homepageId=222265642
 
+# API KEY
+# Generate your apikey for 1 year at: https://portail-api.meteofrance.fr/web/fr/
+# and save it in secrets.yaml
+
 #Requete API
-async def fetch(session, url):
-    try:
-        async with session.get(url) as response:
-            if response.status == 200:
-                #log.info(f"Requette HTTP OK")
-                content_type = response.headers.get('Content-Type', '')
-                if 'application/json' in content_type:
-                    #log.info(f"Requette HTTP JSON OK")
-                    return await response.json()
-                else:
-                    #log.info(f"Requette HTTP TEXT OK")
-                    return await response.text()
-                    
+async def fetch(session, url, headers=None):
+    async with session.get(url, headers=headers) as response:
+        if response.status == 200:
+            content_type = response.headers.get('Content-Type', '')
+            #log.error(f"Requette https meteofrance ok")
+            if 'application/json' in content_type:
+                return await response.json()
             else:
-                #log.error(f"Erreur lors de la requette HTTP: {response.status}")
-                return None
-    except Exception as e:
-        #log.error(f"Erreur lors de la requette: {e}")
-        return None
+                return await response.text()
+        else:
+            log.error(f"Meteofrance Erreur lors de la requette HTTP: {response.status}")
+            return None
         
 # function qui retourne les données de l'api meteofrance
 def meteo(stations_list: dict, token : str):
     async with aiohttp.ClientSession() as session:
-        serveur = 'https://public-api.meteofrance.fr/public/DPObs/v1'
+        """
+        https://public-api.meteofrance.fr/public/DPObs/v2/station/infrahoraire-6m?id_station=38185012&format=json
+        """
+        serveur = 'https://public-api.meteofrance.fr/public/DPObs/v2'
         service = '/station/infrahoraire-6m'
-        datage = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")     # en UTC
-    
+        headers = {'apikey': f'{token}'}
+        
         for station in stations_list:
-            url = serveur + service + '?id_station=' + station['id'] + '&date=' + urllib.parse.quote(datage) + '&format=json&apikey=' + urllib.parse.quote(token)
-            #log.error(url)
-            result = await fetch(session, url)   
+            url = serveur + service + '?id_station=' + station['id'] + '&format=json'
+            result = await fetch(session, url, headers=headers)   
             if not result:
-                service = '/station/horaire'
-                url = serveur + service + '?id_station=' + station['id'] + '&date=' + urllib.parse.quote(datage) + '&format=json&apikey=' + urllib.parse.quote(token)
-                result = await fetch(session, url)   
-            #log.error(station['alias'])    
-            t = float(result[0]['t'] -273.15)
-            t = round(t,1) 
-            #log.error(f"Temperature {t} °C") 
-            state.set(station['entities']['temperature'],t)
-            u = float(result[0]['u'])
-            u = round(u)
-            #log.error(f"Humidité {u} %") 
-            state.set(station['entities']['humidity'],u)
+                continue
+            try:
+                #log.error(station['alias'])    
+                t = float(result[0]['t'] -273.15)
+                t = round(t,1) 
+                #log.error(f"Temperature {t} °C") 
+                state.set(station['entities']['temperature'],t)
+                u = float(result[0]['u'])
+                u = round(u)
+                #log.error(f"Humidité {u} %") 
+                state.set(station['entities']['humidity'],u)
+            except Exception as e:
+                log.error(f" in parsing meteofrance data for station: {station=}")
 
 @pyscript_executor                
 def read_yaml_file(file_name):
@@ -77,4 +77,3 @@ def meteofrance():
     token = read_yaml_file("secrets.yaml")
     await meteo(liste, token["meteo"]) 
         
-
