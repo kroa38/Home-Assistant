@@ -4,12 +4,6 @@
 # Loads default set of integrations. Do not remove.
 default_config:
 
-http:
-  ssl_certificate: /ssl/fullchain.pem
-  ssl_key: /ssl/privkey.pem
-  ip_ban_enabled: true
-  login_attempts_threshold: 3
-
 # Load custom front-end color
 frontend: !include includes/frontend.yaml
 
@@ -33,6 +27,9 @@ recorder: !include includes/recorder.yaml
 
 # logging
 logger: !include includes/logger.yaml
+
+# sql
+# sql: !include includes/sql.yaml
 
 # Managed via UI
 automation: !include automations.yaml

@@ -8,8 +8,10 @@ deps/
 secrets.yaml
 zigbee2mqtt/
 ip_bans.yaml
+.hass_configurator_prefs.json
 .ssh/
 .storage/*
 !.storage/
 !.storage/lovelace.dashboard_home
 !.storage/local_calendar.heater.ics
+
