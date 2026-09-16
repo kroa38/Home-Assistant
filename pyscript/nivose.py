@@ -129,6 +129,7 @@ def get_file(list_stations_nivose : dict, token : str):
             temperature = round(float(temperature),1)
             
             u = rows[0]['U']
+            humidity = int(u)
             
             windgust = rows[0]['FXI']
             windgust = round(float(windgust.replace(',', '.')) *3.6)
@@ -142,10 +143,12 @@ def get_file(list_stations_nivose : dict, token : str):
             #log.error(f"windchill : {windchill} °C")
             
             state.set(station['entities']['temp'],temperature)
+            state.set(station['entities']['hum'],humidity)
             state.set(station['entities']['chill'],windchill)
             state.set(station['entities']['snow'],snow)
             state.set(station['entities']['gust'],windgust)
             state.set(station['entities']['wind'],wind)
+
 
 
 def calcul_windchill(temperature_celsius, vitesse_vent_kmh):
